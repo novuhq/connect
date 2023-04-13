@@ -4,18 +4,26 @@ import React from 'react';
 
 import Link from 'components/shared/link';
 
-// Example of the code — https://user-images.githubusercontent.com/20713191/144215307-35538500-b9f0-486d-abed-1a14825bb75c.png
 const styles = {
-  // TODO: Add base styles
-  base: '',
-  // TODO: Add sizes. Better to write down all sizes and go from higher to lower, e.g. "xl", "lg", "md", "sm", "xs"
-  //       The name of the size cannot be lower than the font size that being used, e.g. "sm" size cannot have font-size "xs"
-  //       Check out an example by a link above for better understanding
-  size: {},
-  // TODO: Add themes. Better to name the theme using this pattern: "${color-name}-${theme-type}", e.g. "black-filled"
-  //       If there is no dividing between theme types, then feel free to use just color names, e.g. "black"
-  //       Check out an example by a link above for better understanding
-  theme: {},
+  base: 'inline-flex items-center justify-center !leading-none text-center whitespace-nowrap rounded transition-[colors, opacity] duration-200 outline-none uppercase font-medium',
+  size: {
+    sm: 'h-12 px-6 text-sm',
+    xs: 'h-10 px-5 text-xs',
+  },
+  theme: {
+    primary: 'bg-primary-1 text-black hover:bg-white',
+    'black-filled': 'bg-black text-white hover:bg-[rgba(0,0,0,0.8)]',
+    'white-filled': 'bg-white text-black hover:bg-[rgba(255,255,255,0.8)]',
+    'black-outline':
+      'bg-transparent text-black border border-black hover:bg-gray-5 hover:border-gray-5',
+    'gray-outline':
+      'bg-transparent text-white border border-gray-5 hover:bg-gray-4 hover:border-gray-4',
+    'blue-gradient':
+      'text-black bg-blue-gradient relative before:absolute before:-z-10 before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:rounded before:bg-blue-gradient before:blur-[3px] before:opacity-100 hover:before:opacity-0 before:transition-opacity before:duration-200',
+    'pink-to-yellow-gradient':
+      'text-black bg-transparent bg-pink-yellow-gradient hover:bg-white hover:bg-none transition-[color,background-image]',
+    yellow: 'bg-yellow text-black hover:bg-white',
+  },
 };
 
 const Button = ({ className: additionalClassName, to, size, theme, children, ...otherProps }) => {
@@ -34,13 +42,14 @@ Button.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(styles.size)).isRequired,
-  theme: PropTypes.oneOf(Object.keys(styles.theme)).isRequired,
+  theme: PropTypes.oneOf(Object.keys(styles.theme)),
   children: PropTypes.node.isRequired,
 };
 
 Button.defaultProps = {
   className: null,
   to: null,
+  theme: null,
 };
 
 export default Button;

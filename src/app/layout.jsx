@@ -1,3 +1,5 @@
+import 'styles/main.css';
+
 // eslint-disable-next-line react/prop-types
 const RootLayout = ({ children }) => (
   <html lang="en">
