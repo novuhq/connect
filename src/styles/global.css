@@ -4,7 +4,7 @@
   }
 
   body {
-    @apply min-w-[320px] bg-black font-sans text-base leading-normal text-white antialiased;
+    @apply min-w-[320px] bg-black font-sans text-16 leading-normal text-white antialiased;
     -webkit-tap-highlight-color: transparent;
   }
 }
