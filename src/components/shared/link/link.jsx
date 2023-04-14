@@ -1,4 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
+'use client';
+
 import clsx from 'clsx';
 import { m, LazyMotion, domAnimation, useAnimation } from 'framer-motion';
 import NextLink from 'next/link';
@@ -14,6 +17,7 @@ const styles = {
     sm: 'text-14',
   },
   theme: {
+    primary: 'text-primary-1 transition-colors duration-200 hover:text-white',
     'primary-underline':
       'text-primary-1 relative tracking-wide uppercase pb-px transition-colors duration-200 hover:text-primary-1',
     white: 'text-white hover:text-primary-1 transition-colors duration-200',
