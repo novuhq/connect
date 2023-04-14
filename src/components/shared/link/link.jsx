@@ -7,8 +7,8 @@ import React from 'react';
 const styles = {
   base: 'inline-block leading-none',
   size: {
-    base: 'text-base',
-    sm: 'text-sm',
+    base: 'text-16',
+    sm: 'text-14',
   },
   theme: {
     'primary-underline':
@@ -17,7 +17,14 @@ const styles = {
   },
 };
 
-const Link = ({ className: additionalClassName, size, theme, to, children, ...props }) => {
+const Link = ({
+  className: additionalClassName = null,
+  size = null,
+  theme = null,
+  to = null,
+  children,
+  ...props
+}) => {
   const className = clsx(
     size && theme && styles.base,
     styles.size[size],
@@ -46,13 +53,6 @@ Link.propTypes = {
   size: PropTypes.oneOf(Object.keys(styles.size)),
   theme: PropTypes.oneOf(Object.keys(styles.theme)),
   children: PropTypes.node.isRequired,
-};
-
-Link.defaultProps = {
-  className: null,
-  to: null,
-  size: null,
-  theme: null,
 };
 
 export default Link;

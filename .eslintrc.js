@@ -28,6 +28,7 @@ module.exports = {
     'no-unused-vars': 'error',
     'no-shadow': 'off',
     'no-undef': 'error',
+    'react/require-default-props': 0,
     'react/prop-types': 'error',
     'react/no-array-index-key': 'off',
     'react/jsx-props-no-spreading': 'off',

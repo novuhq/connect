@@ -27,7 +27,7 @@ const variants = {
   },
 };
 
-const MobileMenu = ({ isOpen }) => {
+const MobileMenu = ({ isOpen = false }) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const MobileMenu = ({ isOpen }) => {
                 {MENUS.mobile.map(({ to, text, target }, index) => (
                   <li key={index}>
                     <Link
-                      className="block w-full py-6 text-center text-2xl"
+                      className="text-2xl block w-full py-6 text-center"
                       theme="white"
                       size="xl"
                       to={to}
@@ -73,7 +73,7 @@ const MobileMenu = ({ isOpen }) => {
               <div className="container">
                 <div className="flex w-full justify-between space-x-4 py-7">
                   <Button
-                    className="w-full xs:text-xs"
+                    className="xs:text-xs w-full"
                     size="sm"
                     theme="white-filled"
                     {...LINKS.getStarted}
@@ -92,10 +92,6 @@ const MobileMenu = ({ isOpen }) => {
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
-};
-
-MobileMenu.defaultProps = {
-  isOpen: false,
 };
 
 export default MobileMenu;

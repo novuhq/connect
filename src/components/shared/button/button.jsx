@@ -7,11 +7,12 @@ import Link from 'components/shared/link';
 const styles = {
   base: 'inline-flex items-center justify-center !leading-none text-center whitespace-nowrap rounded transition-[colors, opacity] duration-200 outline-none uppercase font-medium',
   size: {
-    sm: 'h-12 px-6 text-sm',
-    xs: 'h-10 px-5 text-xs',
+    md: 'h-14 px-6 text-14',
+    sm: 'h-12 px-6 text-14',
+    xs: 'h-10 px-5 text-12',
   },
   theme: {
-    primary: 'bg-primary-1 text-black hover:bg-white',
+    primary: 'bg-button-prinary-gradient text-white hover:bg-white',
     'black-filled': 'bg-black text-white hover:bg-[rgba(0,0,0,0.8)]',
     'white-filled': 'bg-white text-black hover:bg-[rgba(255,255,255,0.8)]',
     'black-outline':
@@ -26,7 +27,14 @@ const styles = {
   },
 };
 
-const Button = ({ className: additionalClassName, to, size, theme, children, ...otherProps }) => {
+const Button = ({
+  className: additionalClassName = null,
+  to = null,
+  size,
+  theme = null,
+  children,
+  ...otherProps
+}) => {
   const className = clsx(styles.base, styles.size[size], styles.theme[theme], additionalClassName);
 
   const Tag = to ? Link : 'button';
@@ -44,12 +52,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(Object.keys(styles.size)).isRequired,
   theme: PropTypes.oneOf(Object.keys(styles.theme)),
   children: PropTypes.node.isRequired,
-};
-
-Button.defaultProps = {
-  className: null,
-  to: null,
-  theme: null,
 };
 
 export default Button;
