@@ -80,7 +80,7 @@ const CountdownTimer = () => {
   ];
 
   return (
-    <section className="countdown-timer safe-paddings py-16">
+    <section className="countdown-timer safe-paddings py-16 sm:py-12">
       <div className="container">
         <div className="flex gap-x-8 lg:flex-col lg:items-center lg:gap-x-0 lg:gap-y-10 lg:text-center">
           <div className="flex-1">
@@ -88,7 +88,7 @@ const CountdownTimer = () => {
               className="text-40 font-bold leading-tight"
               dangerouslySetInnerHTML={{ __html: TITLE }}
             />
-            <p className="mt-5 max-w-[534px] text-18 text-gray-9">{DESCRIPTION}</p>
+            <p className="mt-5 max-w-[534px] text-18 text-gray-9 sm:text-16">{DESCRIPTION}</p>
           </div>
           <div className="flex-1 font-medium">
             <h3 className="text-18 uppercase leading-none text-white">
