@@ -5,7 +5,6 @@ import React from 'react';
 
 import Tooltip from 'components/shared/tooltip';
 import checkIcon from 'icons/check.svg';
-import card from 'images/home/swag/card.svg';
 import scene from 'images/home/swag/scene.svg';
 
 const TITLE = 'Prizes for the Hackathon';
@@ -109,9 +108,9 @@ const Swag = () => (
             alt=""
             aria-hidden
           />
-          <img
+          <Image
             className="absolute bottom-[9.4%] left-[49%] -translate-x-1/2"
-            src={card}
+            src="/images/home/swag/card.png"
             width={476}
             height={250}
             alt=""
