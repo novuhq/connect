@@ -14,18 +14,18 @@ const DESCRIPTION =
   'Join ConnectNovu Hackathon, showcase your skills, push the boundaries of innovation, and meet like-minded community members.';
 
 const Hero = () => (
-  <section className="hero safe-paddings relative overflow-hidden pb-16 pt-34 lg:pt-32 md:pb-14 md:pt-30 sm:pt-22">
+  <section className="hero safe-paddings relative overflow-hidden pb-16 pt-36 lg:pt-32 md:pb-14 md:pt-30 sm:pt-22">
     <div className="container-lg relative flex flex-col items-center justify-center">
       <span className="block text-center text-20 font-medium uppercase leading-none text-primary-1">
         {DATE}
       </span>
       <h1 className="mt-2 text-96 font-bold leading-denser md:text-64 sm:text-48">{TITLE}</h1>
-      <p className="mt-5 max-w-[716px] text-center text-18 font-light leading-snug md:max-w-[540px] md:text-16">
+      <p className="mt-5 max-w-[716px] text-center text-18 font-light md:max-w-[540px] md:text-16">
         {DESCRIPTION}
       </p>
       <Button className="xs:text-xs mt-10" to="/" target="_blank" size="md" theme="primary">
-        <GitHubIcon className="mr-2 h-[26px] w-[26px]" />
-        <span>Register with Github</span>
+        <GitHubIcon className="z-10 mr-2 h-[26px] w-[26px]" />
+        <span className="z-10">Register with Github</span>
       </Button>
     </div>
 
@@ -34,7 +34,7 @@ const Hero = () => (
       aria-hidden
     />
     <img
-      className="absolute top-1/2 -z-20 mt-9 w-full -translate-y-1/2"
+      className="absolute top-1/2 -z-20 mt-[33px] w-full -translate-y-1/2"
       src={bgLines}
       width={1920}
       height={580}

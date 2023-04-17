@@ -54,7 +54,8 @@ module.exports = {
       },
     }),
     backgroundImage: {
-      'button-prinary-gradient': 'linear-gradient(257.22deg, #00A3FF 11.98%, #802CFF 92.64%)',
+      'button-primary-gradient': 'linear-gradient(257.22deg, #00A3FF 11.98%, #802CFF 92.64%)',
+      'hover-button-primary-gradient': 'linear-gradient(257.22deg, #00A3FF -10%,  #802CFF 50%)',
       'get-started-card-gradient':
         'linear-gradient(180deg, rgba(0, 0, 0, 0) 54.67%, rgba(0, 0, 0, 0.3) 100%), linear-gradient(257.22deg, #79CFFF 11.46%, #B98BFF 92.64%)',
       'card-gradient': 'linear-gradient(180deg, #1A1A1A 0%, rgba(26, 26, 26, 0.7) 100%)',

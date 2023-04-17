@@ -60,7 +60,7 @@ const HowItWorks = () => (
       <p className="mx-auto mt-12 max-w-[716px] text-center text-18 font-light sm:mt-8 sm:max-w-[534px] sm:text-16">
         {DESCRIPTION}
       </p>
-      <ul className="mt-20 grid grid-cols-4 gap-x-10 lg:mt-16 md:mt-14 md:grid-cols-2 md:gap-x-6 md:gap-y-14 sm:mt-10 sm:flex sm:flex-col sm:items-center sm:gap-y-10 sm:text-center">
+      <ul className="mt-16 grid grid-cols-4 gap-x-10 lg:mt-16 md:mt-14 md:grid-cols-2 md:gap-x-6 md:gap-y-14 sm:mt-10 sm:flex sm:flex-col sm:items-center sm:gap-y-10 sm:text-center">
         {ITEMS.map(({ icon, title, description }, index) => (
           <li className="sm:max-w-[275px]" key={index}>
             <img className="h-16 sm:mx-auto" src={icon} height={64} width={120} alt="" />

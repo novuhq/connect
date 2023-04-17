@@ -12,7 +12,8 @@ const styles = {
     xs: 'h-10 px-5 text-12',
   },
   theme: {
-    primary: 'bg-button-prinary-gradient text-white hover:bg-white',
+    primary:
+      'relative overflow-hidden bg-button-primary-gradient after:absolute after:bg-hover-button-primary-gradient after:transition-all after:duration-500 after:inset-0 after:w-[0px] hover:after:w-full text-white',
     'black-filled': 'bg-black text-white hover:bg-[rgba(0,0,0,0.8)]',
     'white-filled': 'bg-white text-black hover:bg-[rgba(255,255,255,0.8)]',
     'black-outline':
