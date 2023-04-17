@@ -44,11 +44,26 @@ const tick = () => {
   return getCountTime(distance);
 };
 
-const CountdownTimer = () => {
-  const [countdown, setCountdown] = useState(() => tick());
-  const [isLaunched, setIsLaunched] = useState(COUNTDOWN_DATE < new Date().getTime());
+const useCountdown = () => {
+  const [countdown, setCountdown] = useState({
+    days: '00',
+    hours: '00',
+    minutes: '00',
+    seconds: '00',
+  });
+  const [isLaunched, setIsLaunched] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
+    setCountdown(tick());
+    setIsLaunched(COUNTDOWN_DATE < new Date().getTime());
+
     const interval = setInterval(() => {
       setCountdown(tick());
       if (COUNTDOWN_DATE < new Date().getTime()) {
@@ -58,7 +73,13 @@ const CountdownTimer = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isMounted]);
+
+  return { countdown, isLaunched };
+};
+
+const CountdownTimer = () => {
+  const { countdown, isLaunched } = useCountdown();
 
   const items = [
     {
