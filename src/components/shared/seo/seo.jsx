@@ -5,7 +5,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_DEFAULT_SITE_URL || 'localhost:3000';
 const DEFAULT_TITLE = 'ConnectNovu';
 const DEFAULT_DESCRIPTION =
   'The ultimate library for managing multi-channel transactional notifications with a single API.';
-const DEFAULT_IMAGE_PATH = '/images/social-previews/index.jpg';
+const DEFAULT_IMAGE_PATH = '/images/social-preview.jpg';
 
 const fontsBasePath = '/fonts/brother-1816';
 
