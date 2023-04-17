@@ -30,7 +30,6 @@ const Tooltip = ({ className = null, text }) => {
           src={tooltipIcon}
           height={16}
           width={16}
-          loading="lazy"
           alt=""
           aria-hidden
         />
