@@ -51,10 +51,6 @@ export default {
   },
 
   // Other pages
-  github: {
-    to: 'https://github.com/novuhq/novu',
-    target: '_blank',
-  },
   documentation: {
     to: 'https://docs.novu.co/overview/introduction',
     target: '_blank',
