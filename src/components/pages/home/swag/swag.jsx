@@ -134,10 +134,8 @@ const Swag = () => (
                   />
                 </div>
                 <div className="flex items-center">
-                  <span className="inline-block text-18">
-                    {title}
-                    {tooltip && <Tooltip className="translate-y-1" text={tooltip} />}
-                  </span>
+                  <span className="inline-block text-18">{title}</span>
+                  {tooltip && <Tooltip text={tooltip} />}
                 </div>
               </li>
             ))}
@@ -163,10 +161,8 @@ const Swag = () => (
                     />
                   </div>
                   <div className="flex items-center">
-                    <span className="inline-block text-16">
-                      {title}
-                      {tooltip && <Tooltip className="translate-y-1" text={tooltip} />}
-                    </span>
+                    <span className="inline-block text-16">{title}</span>
+                    {tooltip && <Tooltip text={tooltip} />}
                   </div>
                 </li>
               ))}
@@ -193,10 +189,8 @@ const Swag = () => (
                     />
                   </div>
                   <div className="flex items-center">
-                    <span className="inline-block text-16">
-                      {title}
-                      {tooltip && <Tooltip className="translate-y-1" text={tooltip} />}
-                    </span>
+                    <span className="inline-block text-16">{title}</span>
+                    {tooltip && <Tooltip text={tooltip} />}
                   </div>
                 </li>
               ))}
