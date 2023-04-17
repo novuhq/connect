@@ -30,4 +30,12 @@
     font-style: normal;
     font-display: fallback;
   }
+
+  @font-face {
+    font-family: 'Brother-1816';
+    src: url('/fonts/brother-1816/brother-1816-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: fallback;
+  }
 }
