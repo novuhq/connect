@@ -20,7 +20,8 @@ const FAQ_DATA = [
         <Link to="/" target="_blank" rel="noreferrer" theme="primary">
           here
         </Link>
-        . The judges will be a mix of industry experts and Novu team members.
+        . <br />
+        The judges will be a mix of industry experts and Novu team members.
       </>
     ),
   },
