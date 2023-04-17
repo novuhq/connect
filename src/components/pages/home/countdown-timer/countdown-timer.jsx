@@ -81,7 +81,7 @@ const CountdownTimer = () => {
 
   return (
     <section className="countdown-timer safe-paddings py-16 sm:py-12">
-      <div className="container">
+      <div className="container-lg">
         <div className="flex gap-x-8 lg:flex-col lg:items-center lg:gap-x-0 lg:gap-y-10 lg:text-center">
           <div className="flex-1">
             <h2

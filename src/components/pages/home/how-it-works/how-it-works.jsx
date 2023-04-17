@@ -54,8 +54,8 @@ const ITEMS = [
 ];
 
 const HowItWorks = () => (
-  <section className="how-it-works safe-paddings py-16 sm:py-12">
-    <div className="container">
+  <section className="how-it-works safe-paddings py-16 sm:py-12" id="stages">
+    <div className="container-lg">
       <h2 className="text-center text-48 leading-tight md:text-40 sm:text-36">{TITLE}</h2>
       <p className="mx-auto mt-12 max-w-[716px] text-center text-18 font-light sm:mt-8 sm:max-w-[534px] sm:text-16">
         {DESCRIPTION}

@@ -76,8 +76,11 @@ const PLACES = [
 ];
 
 const Swag = () => (
-  <section className="swag safe-paddings overflow-hidden pb-32 pt-16 lg:pb-20 md:pb-16 md:pt-12 sm:pb-12 sm:pt-10">
-    <div className="container">
+  <section
+    className="swag safe-paddings overflow-hidden pb-32 pt-16 lg:pb-20 md:pb-16 md:pt-12 sm:pb-12 sm:pt-10"
+    id="prizes"
+  >
+    <div className="container-lg">
       <h2 className="text-center text-48 leading-tight md:text-40 sm:text-36">{TITLE}</h2>
 
       <div className="grid-gap-x mt-16 grid grid-cols-10 items-center md:block">

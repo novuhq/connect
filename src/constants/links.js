@@ -6,42 +6,55 @@ export default {
   prizes: {
     to: '#prizes',
   },
-  faq: {
-    to: '#faq',
+  faqSection: {
+    to: '#faqSection',
   },
   // Pages
   home: {
     to: '/',
   },
   blog: {
-    to: '/blog',
+    to: 'https://novu.co/blog',
+    target: '_blank',
   },
   contributors: {
-    to: '/contributors',
+    to: 'https://novu.co/contributors',
+    target: '_blank',
   },
   podcast: {
-    to: '/podcast',
+    to: 'https://novu.co/podcast',
+    target: '_blank',
   },
   termsOfUse: {
-    to: '/terms',
+    to: 'https://novu.co/terms',
+    target: '_blank',
   },
   privacyPolicy: {
-    to: '/privacy',
+    to: 'https://novu.co/privacy',
+    target: '_blank',
   },
   dataProcessingAgreement: {
-    to: '/dpa',
+    to: 'https://novu.co/dpa',
+    target: '_blank',
   },
   hacktoberfest: {
-    to: '/hacktoberfest',
+    to: 'https://novu.co/hacktoberfest',
+    target: '_blank',
   },
   pricing: {
-    to: '/pricing',
+    to: 'https://novu.co/pricing',
+    target: '_blank',
   },
   timeline: {
-    to: '/timeline',
+    to: 'https://novu.co/timeline',
+    target: '_blank',
   },
 
   // Other pages
+  github: {
+    to: 'https://github.com/novuhq/novu',
+    target: '_blank',
+  },
   documentation: {
     to: 'https://docs.novu.co/overview/introduction',
     target: '_blank',
@@ -121,7 +134,8 @@ export default {
     target: '_blank',
   },
   polishing: {
-    to: '/polishing',
+    to: 'https://novu.co/polishing',
+    target: '_blank',
   },
   notificationDirectory: {
     to: 'https://notifications.directory',

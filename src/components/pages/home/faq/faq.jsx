@@ -130,7 +130,7 @@ const FAQ_DATA = [
 ];
 
 const FAQ = () => (
-  <section className="faq safe-paddings bg-gray-2 py-20 lg:py-16 md:py-12 sm:py-10">
+  <section className="faq safe-paddings bg-gray-2 py-20 lg:py-16 md:py-12 sm:py-10" id="faqSection">
     <div className="container-md">
       <h2 className="text-center text-48 leading-tight md:text-40 sm:text-36">
         Frequently Asked Questions

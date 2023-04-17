@@ -15,10 +15,10 @@ const RIGHT_BUTTON_TEXT = 'Join the novu discord';
 
 const GetStarted = () => (
   <section className="get-started safe-paddings py-40 lg:py-28 md:py-16 sm:py-11">
-    <div className="container">
+    <div className="container-md">
       <h2 className="text-center text-36 leading-tight md:text-28">{TITLE}</h2>
 
-      <div className="mx-auto mt-16 grid max-w-[968px] grid-cols-2 gap-x-10 lg:gap-x-7 md:mt-12 md:gap-x-5 sm:mt-8 sm:grid-cols-1 sm:gap-x-0 sm:gap-y-7">
+      <div className="mx-auto mt-16 grid grid-cols-2 gap-x-10 lg:gap-x-7 md:mt-12 md:gap-x-5 sm:mt-8 sm:grid-cols-1 sm:gap-x-0 sm:gap-y-7">
         <div className="flex flex-col items-center rounded-[20px] bg-gradient-to-b from-gray-2 to-[rgba(26,26,26,0.7)] p-8 pb-10 lg:rounded-2xl sm:order-2 sm:p-5">
           <h3 className="text-28 font-medium leading-snug sm:text-24">{LEFT_TITLE}</h3>
           <p className="font-book mb-7 mt-3 text-center text-16 leading-snug text-gray-9 sm:mb-5">

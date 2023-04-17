@@ -15,7 +15,7 @@ const DESCRIPTION =
 
 const Hero = () => (
   <section className="hero safe-paddings relative overflow-hidden pb-16 pt-34 lg:pt-32 md:pb-14 md:pt-30 sm:pt-22">
-    <div className="container relative flex flex-col items-center justify-center">
+    <div className="container-lg relative flex flex-col items-center justify-center">
       <span className="block text-center text-20 font-medium uppercase leading-none text-primary-1">
         {DATE}
       </span>
