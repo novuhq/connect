@@ -7,13 +7,12 @@ const DESCRIPTION =
   'ConnectNovu Hackathon is a global event focused on notifications. Get ready to join our upcoming hackathon and build with the latest notifications infrastructure!';
 
 const COUNTDOWN_DATE = new Date('May 1, 2023 00:00:00').getTime();
+const ONE_DAY = 1000 * 60 * 60 * 24;
+const ONE_HOUR = 1000 * 60 * 60;
+const ONE_MINUTE = 1000 * 60;
+const ONE_SECOND = 1000;
 
 const getCountTime = (distance) => {
-  const ONE_DAY = 1000 * 60 * 60 * 24;
-  const ONE_HOUR = 1000 * 60 * 60;
-  const ONE_MINUTE = 1000 * 60;
-  const ONE_SECOND = 1000;
-
   const days = Math.floor(distance / ONE_DAY)
     .toString()
     .padStart(2, '0');
@@ -29,35 +28,36 @@ const getCountTime = (distance) => {
   return { days, hours, minutes, seconds };
 };
 
+const tick = () => {
+  const now = new Date().getTime();
+  const distance = COUNTDOWN_DATE - now;
+
+  if (distance < 0) {
+    return {
+      days: '00',
+      hours: '00',
+      minutes: '00',
+      seconds: '00',
+    };
+  }
+
+  return getCountTime(distance);
+};
+
 const CountdownTimer = () => {
-  const [countdown, setCountdown] = useState({
-    days: '00',
-    hours: '00',
-    minutes: '00',
-    seconds: '00',
-  });
-  const isLaunched = Object.values(countdown).every((value) => value === '00');
+  const [countdown, setCountdown] = useState(() => tick());
+  const [isLaunched, setIsLaunched] = useState(COUNTDOWN_DATE < new Date().getTime());
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = COUNTDOWN_DATE - now;
-
-      if (distance <= 0) {
-        clearInterval(intervalId);
-        setCountdown({
-          days: '00',
-          hours: '00',
-          minutes: '00',
-          seconds: '00',
-        });
-      } else {
-        const countTime = getCountTime(distance);
-        setCountdown(countTime);
+    const interval = setInterval(() => {
+      setCountdown(tick());
+      if (COUNTDOWN_DATE < new Date().getTime()) {
+        clearInterval(interval);
+        return setIsLaunched(true);
       }
     }, 1000);
 
-    return () => clearInterval(intervalId);
+    return () => clearInterval(interval);
   }, []);
 
   const items = [
@@ -90,10 +90,12 @@ const CountdownTimer = () => {
             />
             <p className="mt-5 max-w-[534px] text-18 text-gray-9 sm:text-16">{DESCRIPTION}</p>
           </div>
+
           <div className="flex-1 font-medium">
             <h3 className="text-18 uppercase leading-none text-white">
               {isLaunched ? 'Time to end' : 'Time to launch'}
             </h3>
+
             <div className="mt-7 flex gap-x-18 md:gap-x-16 sm:gap-x-10 xs:gap-x-6">
               {items.map(({ number, title }, index) => (
                 <div
