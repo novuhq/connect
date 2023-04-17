@@ -20,112 +20,53 @@ const FAQ_DATA = [
         <Link to="/" target="_blank" rel="noreferrer" theme="primary">
           here
         </Link>
-        .
+        . The judges will be a mix of industry experts and Novu team members.
       </>
     ),
   },
   {
-    question: 'What is a notification?',
-    answer:
-      'A notification is any message sent over any channel, after Novu logic engine, Novu user preferences, and your configuration calculated and crafted the message. A notification can be sent to an email, In-App notification center, chat, push, and more.',
+    question: 'What is the maximum number of people allowed to participate in a team?',
+    answer: 'You can participate in a team of up to 5 people.',
   },
   {
-    question: 'What are the differences between Novu Cloud and Open Source?',
+    question: 'How many projects can you submit?',
+    answer: 'You can submit only one project.',
+  },
+  {
+    question: 'What frameworks can be used for the project?',
+    answer:
+      'Having a front for the project is a must and can be used by any framework (ex. React, Angular, Vue, Salvte, Vanilla).',
+  },
+  {
+    question: 'What languages can be chosen for the backend?',
+    answer: 'You can choose any language for the backend.',
+  },
+  {
+    question: 'What is the deadline for submitting the code that must be created during the event?',
+    answer: 'Code must be created during the event, and be submitted before 29.5',
+  },
+  {
+    question: 'What are the requirements for the GitHub repository?',
+    answer: 'The GitHub repository must be public and on the same GitHub authentication handle.',
+  },
+  {
+    question: 'Do I need to use the Novu library?',
+    answer: 'The apps must include the Novu library.',
+  },
+  {
+    question: 'About README.md file',
     answer: (
       <>
-        Novu{' '}
-        <Link to="https://github.com/novuhq/novu" target="_blank" rel="noreferrer" theme="primary">
-          Open source
+        <Link to="/" theme="primary">
+          README.md
         </Link>{' '}
-        is a technology available under an MIT license, build and maintained by Novu community. You
-        can adapt it to your needs, contribute, or simply use docker files and run it. Novu Cloud is
-        a managed service run, managed, and maintained by Novu, Cloud version is scalable and robust
-        by design, including uptime SLAs, and more business-facing features, that are not available
-        under the Open Source version.
+        file must contain the following template
       </>
     ),
   },
   {
-    question: 'Can I send more than 1 million events a month on Novu Cloud?',
-    answer:
-      'Yes, you absolutely can. Our managed cloud system was built to scale with your usage, so you don’t have to worry about it.',
-  },
-  {
-    question: 'Do you offer any enterprise plan?',
-    answer: (
-      <>
-        Yes, we do. Enterprise plans are available for teams who require extended enterprise-grade
-        features, and specific SLAs or have unique concerns about PII, security, insurance, or
-        legal. Feel free to reach out to us over Intercom, or send us an email at{' '}
-        <Link to="mailto:sales@novu.co" theme="primary">
-          sales@novu.co
-        </Link>
-        .
-      </>
-    ),
-  },
-  {
-    question: 'Do you have offer enterprise support plan?',
-    answer:
-      'As part of our enterprise support, you’ll get our usual support channels as well as a Microsoft Teams/Slack/Discord channel. In case you want to add an enterprise support plan, with dedicated technical support, we are happy to offer that next to an active enterprise plan.',
-  },
-  {
-    question: 'How long is the open beta for? When do you plan to start charging?',
-    answer:
-      'We plan to convert to the paid version of Novu sometime between Q2 and Q4 of 2023. We will ensure that we contact all of our customers at least x months before the switch so that you have plenty of time to ensure your systems are not impacted.',
-  },
-  {
-    question: 'I need more events or enterprise features, can you help?',
-    answer: (
-      <>
-        We sure can. We are happy to work with enterprises and build Novu to support both their
-        needs as well as the grand community ones. From new features, security, and privacy, or if
-        you need to send dozens or hundreds of events a month, we are here to help. Feel free to
-        reach out to us over Chat, or send us an email at{' '}
-        <Link to="mailto:sales@novu.co" theme="primary">
-          sales@novu.co
-        </Link>
-        .
-      </>
-    ),
-  },
-  {
-    question: 'What should I do if I have regulatory or security issues with PII?',
-    answer: (
-      <>
-        We regularly work with big companies and are happy to help and support you with guidance,
-        and various compliances including reports to ease your security and legal team. If you have
-        very complicated PII needs, you can use our OS version, Novu Hybrid-Cloud enterprise plan,
-        or reach out to us at{' '}
-        <Link to="mailto:sales@novu.co" theme="primary">
-          sales@novu.co
-        </Link>
-        , or our support, or{' '}
-        <Link to="https://discord.gg/9wcGSf22PM" theme="primary">
-          Discord
-        </Link>
-        .
-      </>
-    ),
-  },
-  {
-    question: 'Do you promise any Service Level Agreement (SLA)?',
-    answer: (
-      <>
-        We sure do! First of all we promise uptime SLA for our cloud system for 99.99%. We also
-        offer an initial 2 days support SLA, but most enquiries on our Intercom or{' '}
-        <Link to="https://discord.gg/9wcGSf22PM" theme="primary">
-          Discord
-        </Link>{' '}
-        get a response in a couple of hours. For our enterprise plan we can offer upgraded SLA as
-        part of the commercial contract.
-      </>
-    ),
-  },
-  {
-    question: 'Can I use Novu free of charge?',
-    answer:
-      'Yes, you can. If you send less than 10K events per month, then Novu Cloud is entirely free. Another option is to deploy the Open-Source version of Novu onto your own infrastructure, but that does not give you the unique SLA and global redundancy we have in the Cloud version of Novu.',
+    question: 'Will an unfinished project be judge?',
+    answer: 'We won’t be able to judge non-completed projects.',
   },
 ];
 
