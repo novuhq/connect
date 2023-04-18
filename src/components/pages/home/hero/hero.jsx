@@ -35,7 +35,7 @@ const Hero = () => {
           {DESCRIPTION}
         </p>
         <Button
-          className="xs:text-xs mt-10"
+          className="mt-10 xs:text-12"
           size="md"
           theme="primary"
           state={buttonState}
@@ -47,7 +47,7 @@ const Hero = () => {
       </div>
 
       <span
-        className="absolute left-1/2 top-1/2 -z-10 h-full w-full max-w-[1325px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,#000000_45.83%,rgba(0,0,0,0)_100%)]"
+        className="absolute left-1/2 top-1/2 -z-10 h-full w-full max-w-[1325px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,#000000_45.83%,_rgba(0,0,0,0)_100%)]"
         aria-hidden
       />
       <img

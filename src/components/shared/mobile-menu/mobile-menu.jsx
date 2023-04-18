@@ -27,7 +27,7 @@ const variants = {
   },
 };
 
-const MobileMenu = ({ isOpen = false }) => {
+const MobileMenu = ({ isOpen = false, setIsOpen }) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -39,6 +39,13 @@ const MobileMenu = ({ isOpen = false }) => {
       document.body.style.touchAction = '';
     }
   }, [isOpen, controls]);
+
+  const handleLinkClick = (e) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    window.location.href = e.target.href;
+  };
 
   return (
     <LazyMotion features={domAnimation}>
@@ -61,6 +68,7 @@ const MobileMenu = ({ isOpen = false }) => {
                       size="xl"
                       to={to}
                       target={target}
+                      onClick={handleLinkClick}
                     >
                       {text}
                     </Link>
@@ -92,6 +100,7 @@ const MobileMenu = ({ isOpen = false }) => {
 
 MobileMenu.propTypes = {
   isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func.isRequired,
 };
 
 export default MobileMenu;
