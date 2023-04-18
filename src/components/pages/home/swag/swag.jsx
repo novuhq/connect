@@ -26,7 +26,17 @@ const PLACES = [
       },
       {
         title: 'Becoming a Novu ambassador',
-        tooltip: 'GitHub sponsorships of $1500 in 3 strokes',
+        tooltip: (
+          <>
+            1. Special tag on Discord
+            <br />
+            2. Special tag on Community Heroes.
+            <br />
+            3. A job title that can be put anywhere and recognized by Novu.
+            <br />
+            4. First access to the next Novu’s exclusive events.
+          </>
+        ),
       },
     ],
   },
@@ -47,7 +57,17 @@ const PLACES = [
       },
       {
         title: 'Becoming a Novu ambassador',
-        tooltip: 'GitHub sponsorships of $1500 in 3 strokes',
+        tooltip: (
+          <>
+            1. Special tag on Discord
+            <br />
+            2. Special tag on Community Heroes.
+            <br />
+            3. A job title that can be put anywhere and recognized by Novu.
+            <br />
+            4. First access to the next Novu’s exclusive events.
+          </>
+        ),
       },
     ],
   },
@@ -56,7 +76,17 @@ const PLACES = [
     items: [
       {
         title: 'Becoming a Novu ambassador',
-        tooltip: 'GitHub sponsorships of $1500 in 3 strokes',
+        tooltip: (
+          <>
+            1. Special tag on Discord
+            <br />
+            2. Special tag on Community Heroes.
+            <br />
+            3. A job title that can be put anywhere and recognized by Novu.
+            <br />
+            4. First access to the next Novu’s exclusive events.
+          </>
+        ),
       },
       {
         title: 'Subscription for Pluralsight for one year',
@@ -68,7 +98,17 @@ const PLACES = [
     items: [
       {
         title: 'Becoming a Novu ambassador',
-        tooltip: 'GitHub sponsorships of $1500 in 3 strokes',
+        tooltip: (
+          <>
+            1. Special tag on Discord
+            <br />
+            2. Special tag on Community Heroes.
+            <br />
+            3. A job title that can be put anywhere and recognized by Novu.
+            <br />
+            4. First access to the next Novu’s exclusive events.
+          </>
+        ),
       },
     ],
   },

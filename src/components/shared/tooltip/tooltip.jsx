@@ -3,12 +3,13 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 import 'react-tooltip/dist/react-tooltip.css';
 import tooltipIcon from 'icons/tooltip.svg';
 
-const Tooltip = ({ className = null, text }) => {
+const Tooltip = ({ className = null, text, ...otherProps }) => {
   const [isTooltipVisible, setTooltipVisibility] = useState(true);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const Tooltip = ({ className = null, text }) => {
         className={clsx('group peer shrink-0 p-1.5', className)}
         type="button"
         data-tooltip-id={text}
-        data-tooltip-content={text}
+        data-tooltip-html={ReactDOMServer.renderToStaticMarkup(text)}
         aria-label="Tooltip"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -38,6 +39,8 @@ const Tooltip = ({ className = null, text }) => {
         <ReactTooltip
           id={text}
           className="opacity-1 z-10 max-w-[270px] rounded-lg bg-gray-2 p-4 leading-normal"
+          multiline
+          {...otherProps}
         />
       )}
     </>
