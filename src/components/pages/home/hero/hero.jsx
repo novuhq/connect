@@ -3,9 +3,9 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
-import React from 'react';
+import React, { useState } from 'react';
 
-import Button from 'components/shared/button';
+import Button, { BUTTON_STATES } from 'components/shared/button';
 import GitHubIcon from 'icons/github.inline.svg';
 import bgLines from 'images/home/hero/bg-lines.svg';
 
@@ -15,9 +15,12 @@ const DESCRIPTION =
   'Join ConnectNovu Hackathon, showcase your skills, push the boundaries of innovation, and meet like-minded community members.';
 
 const Hero = () => {
+  const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
+
   const handleSignIn = (e) => {
     e.preventDefault();
 
+    setButtonState(BUTTON_STATES.LOADING);
     signIn('github', { callbackUrl: '/thank-you/' });
   };
 
@@ -33,10 +36,9 @@ const Hero = () => {
         </p>
         <Button
           className="xs:text-xs mt-10"
-          to="/"
-          target="_blank"
           size="md"
           theme="primary"
+          state={buttonState}
           onClick={handleSignIn}
         >
           <GitHubIcon className="z-10 mr-2 h-[26px] w-[26px]" />
