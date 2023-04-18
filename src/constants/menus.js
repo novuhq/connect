@@ -56,7 +56,7 @@ const MENUS = {
     },
     {
       text: 'FAQ',
-      ...LINKS.faq,
+      ...LINKS.faqSection,
     },
   ],
 };
