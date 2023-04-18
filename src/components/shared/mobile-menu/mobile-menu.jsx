@@ -1,11 +1,13 @@
+'use client';
+
 import { AnimatePresence, m, LazyMotion, domAnimation, useAnimation } from 'framer-motion';
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 
 import Button from 'components/shared/button/button';
 import Link from 'components/shared/link';
-import LINKS from 'constants/links';
 import MENUS from 'constants/menus';
+import useSignIn from 'hooks/use-sign-in';
 
 const ANIMATION_DURATION = 0.2;
 
@@ -28,6 +30,8 @@ const variants = {
 };
 
 const MobileMenu = ({ isOpen = false, setIsOpen }) => {
+  const { buttonState, signIn } = useSignIn();
+
   const controls = useAnimation();
 
   useEffect(() => {
@@ -84,7 +88,8 @@ const MobileMenu = ({ isOpen = false, setIsOpen }) => {
                     className="xs:text-xs w-full"
                     size="sm"
                     theme="white-filled"
-                    {...LINKS.getStarted}
+                    state={buttonState}
+                    onClick={signIn}
                   >
                     Join Now
                   </Button>

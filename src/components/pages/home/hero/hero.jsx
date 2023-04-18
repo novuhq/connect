@@ -44,7 +44,7 @@ const Hero = () => {
         aria-hidden
       />
       <img
-        className="absolute top-1/2 -z-20 mt-[33px] w-full -translate-y-1/2"
+        className="absolute top-1/2 -z-20 mt-[33px] w-full -translate-y-1/2 md:-mt-5 sm:mt-[-50px]"
         src={bgLines}
         width={1920}
         height={580}

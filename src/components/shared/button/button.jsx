@@ -46,8 +46,17 @@ const Button = ({
     case BUTTON_STATES.LOADING:
       content = (
         <span className="relative flex items-center justify-center">
-          <span className="opacity-0">{children}</span>
-          <span className="absolute h-7 w-7 flex-shrink-0 animate-spin rounded-full border border-b border-transparent border-b-white" />
+          <span className="flex opacity-0">{children}</span>
+          <span
+            className={clsx(
+              'absolute h-7 w-7 flex-shrink-0 animate-spin rounded-full border border-b border-transparent border-b-white',
+              {
+                'border-b-white': theme === 'primary',
+                'border-b-black': theme === 'white-filled',
+                '!h-5 !w-5': size === 'xs' || size === 'sm',
+              }
+            )}
+          />
         </span>
       );
       break;
