@@ -1,3 +1,4 @@
+import mailchimp from '@mailchimp/mailchimp_marketing';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import * as Prisma from '@prisma/client';
 import NextAuth from 'next-auth';
@@ -5,7 +6,12 @@ import GithubProvider from 'next-auth/providers/github';
 
 const prisma = new Prisma.PrismaClient();
 
-export default NextAuth({
+mailchimp.setConfig({
+  apiKey: process.env.MAILCHIMP_KEY,
+  server: process.env.MAILCHIMP_SERVER,
+});
+
+export const authOptions = (req) => ({
   adapter: PrismaAdapter(prisma),
   session: {
     maxAge: 30 * 24 * 60 * 60,
@@ -18,38 +24,45 @@ export default NextAuth({
   ],
   events: {
     async signIn({ user, account }) {
-      // Get user email if we don't have it in public emails
-      if (!user.email) {
-        try {
-          // fetch user email
-          const emails = await fetch('https://api.github.com/user/emails', {
-            headers: {
-              Authorization: `token ${account.accessToken}`,
-            },
-          }).then((res) => res.json());
+      const { login } = await fetch('https://api.github.com/user', {
+        headers: {
+          Authorization: `Bearer ${account.access_token}`,
+        },
+      }).then((res) => res.json());
 
-          if (!emails || emails.length === 0) {
-            return;
-          }
-
-          // Sort by primary email - the user may have several emails, but only one of them will be primary
-          const sortedEmails = emails.sort((a, b) => b.primary - a.primary);
-          const primaryEmail = sortedEmails[0].email;
-
-          // update user email
-          await prisma.user.update({
+      const getInvite = req?.cookies?.invite
+        ? await prisma.user.findUnique({
             where: {
-              id: user.id,
+              email: Buffer.from(req?.cookies?.invite, 'base64').toString(),
             },
-            data: {
-              email: primaryEmail,
-            },
-          });
-        } catch (err) {
-          console.log('Failed to set email', err);
-        }
+          })
+        : undefined;
+
+      await prisma.user.update({
+        where: {
+          id: user.id,
+        },
+        data: {
+          handle: login,
+          ...(getInvite && getInvite.id !== user.id ? { inviteId: getInvite.id } : {}),
+        },
+      });
+
+      if (user.email) {
+        const [name, lastName] = user.name.split(' ');
+        await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST, {
+          email_address: user.email,
+          status: 'subscribed',
+          skip_merge_validation: true,
+          merge_fields: {
+            FNAME: name,
+            LNAME: lastName,
+          },
+        });
       }
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
 });
+
+export default (req, res, context) => NextAuth(authOptions(req, res))(req, res, context);
