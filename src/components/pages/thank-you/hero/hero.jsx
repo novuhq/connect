@@ -1,10 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
+
+'use client';
+
 import React from 'react';
 
 import Button from 'components/shared/button/button';
 import LINKS from 'constants/links';
 import DiscordIcon from 'icons/discord.inline.svg';
 import TwitterIcon from 'icons/twitter.inline.svg';
-import bgLines from 'images/home/hero/bg-lines.svg';
+import bgLines from 'images/bg-lines.svg';
 
 const TITLE = 'Thank you!';
 const DESCRIPTION = (

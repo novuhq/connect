@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 
 import Button, { BUTTON_STATES } from 'components/shared/button';
 import GitHubIcon from 'icons/github.inline.svg';
-import bgLines from 'images/home/hero/bg-lines.svg';
+import bgLines from 'images/bg-lines.svg';
 
 const DATE = 'May 1-29';
 const TITLE = 'ConnectNovu';
