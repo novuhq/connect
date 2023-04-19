@@ -27,7 +27,7 @@ const FAQ_DATA = [
   },
   {
     question: 'What is the maximum number of people allowed to participate in a team?',
-    answer: 'You can participate in a team of up to 5 people.',
+    answer: 'You can participate in a team of up to 5 people, however, the prize will be shared between the teammates',
   },
   {
     question: 'How many projects can you submit?',
@@ -36,7 +36,7 @@ const FAQ_DATA = [
   {
     question: 'What frameworks can be used for the project?',
     answer:
-      'Having a front for the project is a must and can be used by any framework (ex. React, Angular, Vue, Salvte, Vanilla).',
+      'You can use any framework for the backend, however, Having a front for the project is a must and can be used by any framework (ex. React, Angular, Vue, Salvte, Vanilla).',
   },
   {
     question: 'What languages can be chosen for the backend?',
@@ -54,19 +54,19 @@ const FAQ_DATA = [
     question: 'Do I need to use the Novu library?',
     answer: 'The apps must include the Novu library.',
   },
+  // {
+  //   question: 'About README.md file',
+  //   answer: (
+  //     <>
+  //       <Link to="/" theme="primary">
+  //         README.md
+  //       </Link>{' '}
+  //       file must contain the following template
+  //     </>
+  //   ),
+  // },
   {
-    question: 'About README.md file',
-    answer: (
-      <>
-        <Link to="/" theme="primary">
-          README.md
-        </Link>{' '}
-        file must contain the following template
-      </>
-    ),
-  },
-  {
-    question: 'Will an unfinished project be judge?',
+    question: 'Will an unfinished project be judged?',
     answer: 'We won’t be able to judge non-completed projects.',
   },
 ];
