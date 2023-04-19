@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
+    "postinstall": "npx prisma generate",
     "start": "next start",
     "format": "prettier --write .",
     "lint": "npm run lint:js && npm run lint:md",
