@@ -13,9 +13,11 @@ import bgLines from 'images/bg-lines.svg';
 const TITLE = 'Thank you!';
 const DESCRIPTION = (
   <>
-    We are glad that you decided to take part in our Hackathon!
-    <br />
-    To keep track of your project's status, you can visit your profile.
+      Thank you for registering for the Hackathon! 🚀
+      <br />
+      We are starting on 1st May, but you can already start working on it 😉<br />
+      We will let you know more over the email connected to your GitHub.
+      Feel free to follow us on Twitter and Join our discord (at the bottom of the page).
   </>
 );
 
