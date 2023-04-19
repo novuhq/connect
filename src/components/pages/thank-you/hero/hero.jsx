@@ -16,7 +16,7 @@ const DESCRIPTION = (
       Thank you for registering for the Hackathon! 🚀
       <br />
       We are starting on 1st May, but you can already start working on it 😉<br />
-      We will let you know more over the email connected to your GitHub.
+      We will let you know more over the email connected to your GitHub.<br />
       Feel free to follow us on Twitter and Join our discord (at the bottom of the page).
   </>
 );
