@@ -40,16 +40,21 @@ export const authOptions = () => ({
       });
 
       if (user.email) {
-        const [name, lastName] = user.name.split(' ');
-        await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST, {
-          email_address: user.email,
-          status: 'subscribed',
-          skip_merge_validation: true,
-          merge_fields: {
-            FNAME: name,
-            LNAME: lastName,
-          },
-        });
+        try {
+          const [name, lastName] = user.name.split(' ');
+          await mailchimp.lists.addListMember(process.env.MAILCHIMP_LIST, {
+            email_address: user.email,
+            status: 'subscribed',
+            skip_merge_validation: true,
+            merge_fields: {
+              FNAME: name,
+              LNAME: lastName,
+            },
+          });
+        } catch (err) {
+          console.log(err);
+          throw err;
+        }
       }
     },
   },
