@@ -13,16 +13,18 @@ import bgLines from 'images/bg-lines.svg';
 const TITLE = 'Thank you!';
 const DESCRIPTION = (
   <>
-      Thank you for registering for the Hackathon! 🚀
-      <br />
-      We are starting on 1st May, but you can already start working on it 😉<br />
-      We will let you know more over the email connected to your GitHub.<br />
-      Feel free to follow us on Twitter and Join our discord (at the bottom of the page).
+    Thank you for registering for the Hackathon! 🚀
+    <br />
+    We are starting on 1st May, but you can already start working on it 😉
+    <br />
+    We will let you know more over the email connected to your GitHub.
+    <br />
+    Feel free to follow us on Twitter and Join our discord (at the bottom of the page).
   </>
 );
 
 const Hero = () => (
-  <section className="safe-paddings relative h-screen min-h-[600px]">
+  <section className="safe-paddings relative h-screen min-h-[685px]">
     <div className="container relative z-10 flex h-full flex-col items-center justify-center">
       <h1 className="font-mono text-72 font-bold leading-denser lg:text-48 md:text-40 xs:text-32">
         {TITLE}
