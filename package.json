@@ -23,6 +23,8 @@
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next-auth/prisma-adapter": "^1.0.5",
+    "@novu/node": "^0.13.0",
+    "@novu/notification-center": "^0.13.0",
     "@prisma/client": "^4.12.0",
     "clsx": "^1.2.1",
     "file-loader": "^6.2.0",
