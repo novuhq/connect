@@ -51,10 +51,7 @@ export const authOptions = () => ({
               LNAME: lastName,
             },
           });
-        } catch (err) {
-          console.log(err);
-          throw err;
-        }
+        } catch (err) {}
       }
     },
   },
