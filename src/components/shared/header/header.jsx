@@ -8,6 +8,7 @@ import React from 'react';
 import Burger from 'components/shared/burger';
 import Button from 'components/shared/button';
 import Link from 'components/shared/link';
+import Novu from 'components/shared/novu';
 import LINKS from 'constants/links';
 import MENUS from 'constants/menus';
 import useSignIn from 'hooks/use-sign-in';
@@ -34,19 +35,27 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
               ))}
             </ul>
           </nav>
-
-          <Button
-            className="md:hidden"
-            size="xs"
-            theme="white-filled"
-            state={buttonState}
-            onClick={signIn}
-          >
-            Join Now
-          </Button>
+          <div className="flex items-center space-x-8 md:hidden">
+            <Novu />
+            <Button
+              className="md:hidden"
+              size="xs"
+              theme="white-filled"
+              state={buttonState}
+              onClick={signIn}
+            >
+              Join Now
+            </Button>
+          </div>
         </div>
-
-        <Burger className="hidden md:block" isToggled={isMobileMenuOpen} onClick={onBurgerClick} />
+        <div className="hidden items-center space-x-8 md:flex">
+          <Novu />
+          <Burger
+            className="hidden md:block"
+            isToggled={isMobileMenuOpen}
+            onClick={onBurgerClick}
+          />
+        </div>
       </div>
     </header>
   );
