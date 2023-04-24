@@ -16,7 +16,7 @@ const DESCRIPTION =
 const ITEMS = [
   {
     icon: githubRegistration,
-    title: 'Registration with Github',
+    title: 'Registration with GitHub',
     description:
       'You can register for the Hackathon using your GitHub account. No extra registration steps needed.',
   },
