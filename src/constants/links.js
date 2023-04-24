@@ -1,13 +1,13 @@
 export default {
   // Anchors
   stages: {
-    to: '#stages',
+    to: '/#stages',
   },
   prizes: {
-    to: '#prizes',
+    to: '/#prizes',
   },
   faqSection: {
-    to: '#faqSection',
+    to: '/#faqSection',
   },
   // Pages
   home: {

@@ -28,9 +28,13 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
             <ul className="flex space-x-8 md:hidden">
               {MENUS.header.map(({ to, text, target }, index) => (
                 <li key={index}>
-                  <Link to={to} theme="white" size="sm" target={target}>
+                  <a
+                    className="inline-block text-14 leading-none text-white transition-colors duration-200 hover:text-primary-1"
+                    href={to}
+                    target={target}
+                  >
                     {text}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 
 import Button from 'components/shared/button/button';
-import Link from 'components/shared/link';
 import MENUS from 'constants/menus';
 import useSignIn from 'hooks/use-sign-in';
 
@@ -66,16 +65,14 @@ const MobileMenu = ({ isOpen = false, setIsOpen }) => {
               <ul className="my-auto flex w-full flex-col">
                 {MENUS.mobile.map(({ to, text, target }, index) => (
                   <li key={index}>
-                    <Link
-                      className="text-2xl block w-full py-6 text-center"
-                      theme="white"
-                      size="xl"
-                      to={to}
+                    <a
+                      className="text-2xl block inline-block w-full py-6 text-center leading-none text-white transition-colors duration-200 hover:text-primary-1"
+                      href={to}
                       target={target}
                       onClick={handleLinkClick}
                     >
                       {text}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
