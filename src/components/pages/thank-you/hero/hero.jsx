@@ -10,6 +10,8 @@ import DiscordIcon from 'icons/discord.inline.svg';
 import TwitterIcon from 'icons/twitter.inline.svg';
 import bgLines from 'images/bg-lines.svg';
 
+import Link from '../../../shared/link';
+
 const TITLE = 'Thank you!';
 const DESCRIPTION = (
   <>
@@ -37,22 +39,22 @@ const Hero = () => (
       <div className="absolute bottom-20 md:bottom-12">
         <h2 className="font-mono text-center text-16 font-medium uppercase">Let’s connect</h2>
         <div className="flex items-center justify-center space-x-8">
-          <a
+          <Link
             className="group mt-5 cursor-pointer"
             {...LINKS.twitter}
             rel="noreferrer"
             aria-label="Link to our Twitter"
           >
             <TwitterIcon className="h-[26px] transition-opacity duration-200 group-hover:opacity-80" />
-          </a>
-          <a
+          </Link>
+          <Link
             className="group mt-5 cursor-pointer"
             {...LINKS.discord}
             rel="noreferrer"
             aria-label="Link to our Discord"
           >
             <DiscordIcon className="h-[26px] transition-opacity duration-200 group-hover:opacity-80" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
