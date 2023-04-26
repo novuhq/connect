@@ -37,9 +37,7 @@ const CountdownTimer = () => {
                   <span className="text-highlighting-blue-gradient text-64 md:text-56 sm:text-40 xs:text-28">
                     {number}
                   </span>
-                  <span className="mt-2.5 uppercase text-gray-6 sm:text-14 xs:text-12">
-                    {title}
-                  </span>
+                  <span className="mt-2.5 text-14 uppercase text-gray-8 xs:text-12">{title}</span>
                 </div>
               ))}
             </div>
