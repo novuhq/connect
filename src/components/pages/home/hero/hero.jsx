@@ -31,7 +31,7 @@ const Hero = () => {
         </p>
         <Button
           className="mt-10 xs:text-12"
-          to={status === AUTH_STATUS.AUTHENTICATED ? LINKS.profile : ''}
+          to={status === AUTH_STATUS.AUTHENTICATED ? LINKS.profile.to : ''}
           size="md"
           theme="primary"
           state={buttonState}

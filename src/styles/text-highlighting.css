@@ -1,0 +1,7 @@
+@layer base {
+  .text-highlighting-blue-gradient {
+    background: linear-gradient(225deg, #00aaff 0%, #e0caff 80.36%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
