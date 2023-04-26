@@ -5,6 +5,8 @@
 import React from 'react';
 
 import Button from 'components/shared/button';
+import LINKS from 'constants/links';
+import AUTH_STATUS from 'constants/status';
 import useSignIn from 'hooks/use-sign-in';
 import GitHubIcon from 'icons/github.inline.svg';
 import bgLines from 'images/bg-lines.svg';
@@ -15,7 +17,7 @@ const DESCRIPTION =
   'Join ConnectNovu Hackathon, showcase your skills, push the boundaries of innovation, and meet like-minded community members.';
 
 const Hero = () => {
-  const { buttonState, signIn } = useSignIn();
+  const { buttonState, signIn, status } = useSignIn();
 
   return (
     <section className="hero safe-paddings relative overflow-hidden pb-16 pt-36 lg:pt-32 md:pb-14 md:pt-30 sm:pt-22">
@@ -29,13 +31,20 @@ const Hero = () => {
         </p>
         <Button
           className="mt-10 xs:text-12"
+          to={status === AUTH_STATUS.AUTHENTICATED ? LINKS.profile : ''}
           size="md"
           theme="primary"
           state={buttonState}
-          onClick={signIn}
+          onClick={status === AUTH_STATUS.UNAUTHENTICATED ? signIn : undefined}
         >
-          <GitHubIcon className="z-10 mr-2 h-[26px] w-[26px]" />
-          <span className="z-10">Register with Github</span>
+          {status === AUTH_STATUS.AUTHENTICATED ? (
+            <span className="z-10">Open Profile</span>
+          ) : (
+            <>
+              <GitHubIcon className="z-10 mr-2 h-[26px] w-[26px]" />
+              <span className="z-10">Register with Github</span>
+            </>
+          )}
         </Button>
       </div>
 

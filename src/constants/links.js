@@ -13,6 +13,9 @@ export default {
   home: {
     to: '/',
   },
+  profile: {
+    to: '/profile',
+  },
   blog: {
     to: 'https://novu.co/blog',
     target: '_blank',
