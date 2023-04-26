@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
 import FAQ from 'components/pages/home/faq';
+import Swag from 'components/pages/home/swag';
 import Hero from 'components/pages/profile/hero';
 import MainLayout from 'components/shared/main-layout';
 import AUTH_STATUS from 'constants/status';
@@ -33,6 +34,7 @@ const Profile = () => {
     <MainLayout>
       <Hero />
       <FAQ />
+      <Swag />
     </MainLayout>
   );
 };
