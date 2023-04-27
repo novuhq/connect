@@ -8,7 +8,7 @@ import AUTH_STATUS from 'constants/status';
 
 export default function useSignIn() {
   const [isLoadingState, setIsLoadingState] = useState(false);
-  const { status } = useSession();
+  const { data, status } = useSession();
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
   const isLoading = useMemo(
     () => isLoadingState || status === AUTH_STATUS.LOADING,
@@ -30,5 +30,5 @@ export default function useSignIn() {
     }
   }, [isLoading]);
 
-  return { buttonState, signIn: handleSignIn, status, isLoading };
+  return { data, buttonState, signIn: handleSignIn, status, isLoading };
 }

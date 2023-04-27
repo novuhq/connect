@@ -1,5 +1,6 @@
 'use client';
 
+import { SessionProvider } from 'next-auth/react';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
@@ -13,12 +14,14 @@ const MainLayout = ({ children, withoutFooter = false }) => {
   const handleHeaderBurgerClick = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header isMobileMenuOpen={isMobileMenuOpen} onBurgerClick={handleHeaderBurgerClick} />
-      <main>{children}</main>
-      {!withoutFooter && <Footer />}
-      <MobileMenu isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
-    </div>
+    <SessionProvider>
+      <div className="flex min-h-screen flex-col">
+        <Header isMobileMenuOpen={isMobileMenuOpen} onBurgerClick={handleHeaderBurgerClick} />
+        <main>{children}</main>
+        {!withoutFooter && <Footer />}
+        <MobileMenu isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
+      </div>
+    </SessionProvider>
   );
 };
 
