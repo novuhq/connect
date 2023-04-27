@@ -9,7 +9,7 @@ import useSignIn from 'hooks/use-sign-in';
 import GitHubIcon from 'icons/github.inline.svg';
 import bgLines from 'images/bg-lines.svg';
 
-const DATE = 'May 1-29';
+const DATE = '1-29 May, 2023';
 const TITLE = 'ConnectNovu';
 const DESCRIPTION =
   'Join ConnectNovu Hackathon, showcase your skills, push the boundaries of innovation, and meet like-minded community members.';
