@@ -154,6 +154,10 @@ model User {
   adminActionLogs     ActionLogs[] @relation("admin")
   winners             Winners[]
   votes               ArticlesVotes[]
+  topic               String?
+  topicLanguages      String[] @default([])
+  projectUrl          String?
+  projectDescription  String?
 }
 
 model Winners {
