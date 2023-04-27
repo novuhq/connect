@@ -14,7 +14,7 @@ const STAGES = [
   },
   {
     title: 'Submit your project',
-    description: 'Until 30 May 2023',
+    description: 'Until 29 May 2023',
     isActive: false,
     isCompleted: false,
   },
