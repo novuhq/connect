@@ -81,6 +81,9 @@ module.exports = {
         30: '7.5rem',
         34: '8.5rem',
       },
+      fontWeight: {
+        book: 350,
+      },
     },
   },
   plugins: [require('tailwindcss-safe-area')],
