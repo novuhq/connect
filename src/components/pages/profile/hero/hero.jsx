@@ -56,9 +56,9 @@ const Hero = () => {
   }
 
   return (
-    <section className="safe-paddings relative pb-44 pt-32">
+    <section className="safe-paddings relative pb-44 pt-32 md:pt-30 sm:pb-24 sm:pt-22">
       <div className="container-lg">
-        <div className="flex items-center gap-x-7">
+        <div className="flex items-center gap-x-7 sm:flex-col sm:gap-x-0">
           <div className="profile-avatar group relative flex h-[152px] w-[152px] flex-shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-border">
             <img
               className="z-10 rounded-full grayscale transition-all duration-200 group-hover:grayscale-0"
@@ -70,33 +70,37 @@ const Hero = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-y-4">
-            <h1 className="text-48 font-medium leading-denser">{user?.name}</h1>
+          <div className="flex flex-col gap-y-4 sm:mt-3.5 sm:items-center">
+            <h1 className="text-48 font-medium leading-denser sm:text-center sm:text-36 xs:text-28">
+              {user?.name}
+            </h1>
             <Link
               className="group flex items-center gap-x-2"
               to={`https://github.com/${user?.handle}`}
               target="__blank"
             >
               <GitHubIcon className="h-6 transition-opacity duration-200 group-hover:opacity-80" />
-              <span className="text-18 text-secondary-4">{user?.handle}</span>
+              <span className="text-18 text-secondary-4 sm:text-16">{user?.handle}</span>
             </Link>
           </div>
         </div>
 
         <div className="grid-gap-x mt-10 grid grid-cols-10 md:flex md:flex-col">
           <div className="relative col-span-7 max-w-[756px] md:max-w-none">
-            <div className="relative overflow-hidden rounded-lg pb-28 pt-20 before:absolute before:inset-0 before:bg-[linear-gradient(225deg,#00AAFF_0%,#E0CAFF_80.36%)] before:opacity-10">
+            <div className="relative overflow-hidden rounded-lg pb-28 pt-20 before:absolute before:inset-0 before:bg-[linear-gradient(225deg,#00AAFF_0%,#E0CAFF_80.36%)] before:opacity-10 sm:py-16">
               {states.IS_LAUNCHED ? (
                 <div className="relative flex flex-col justify-center px-5 text-center">
-                  <h3 className="text-40 font-medium leading-tight">ConnectNovu started!</h3>
-                  <p className="mx-auto mt-3.5 max-w-[510px] text-18 leading-tight text-gray-8">
+                  <h3 className="text-40 font-medium leading-tight sm:text-32">
+                    ConnectNovu started!
+                  </h3>
+                  <p className="mx-auto mt-3.5 max-w-[510px] text-18 leading-tight text-gray-8 sm:text-16">
                     Сongratulations! Hackathon officially starts and you can select the theme you
                     preferd. After you start to make your project and submit result until{' '}
                     <span className="text-secondary-4">29 May 2023</span>.
                   </p>
 
                   <img
-                    className="absolute left-9"
+                    className="absolute left-9 -z-10 sm:-left-10"
                     src={bgCirclesLeft}
                     height={237}
                     width={177}
@@ -104,7 +108,7 @@ const Hero = () => {
                     alt=""
                   />
                   <img
-                    className="absolute right-10"
+                    className="absolute right-10 -z-10 sm:-right-10"
                     src={bgCirclesRight}
                     height={249}
                     width={115}
@@ -144,26 +148,32 @@ const Hero = () => {
                 </div>
               )}
             </div>
-
+            <Timeline className="hidden md:block" />
             {states.IS_LAUNCHED && <SelectTopic />}
           </div>
 
-          <div className="col-span-3">
+          <div className="col-span-3 md:hidden">
             <Timeline />
           </div>
         </div>
       </div>
 
-      <img
-        className={clsx('mt-3.5 w-full', {
-          'absolute bottom-32 -z-20': states.IS_LAUNCHED,
+      <div
+        className={clsx(' -z-20', {
+          'absolute inset-0 overflow-hidden': states.IS_LAUNCHED,
         })}
-        src={bgLines}
-        width={1920}
-        height={398}
-        loading="eager"
-        alt=""
-      />
+      >
+        <img
+          className={clsx('left-1/2 mt-3.5 w-full ', {
+            'absolute bottom-32 -z-20 min-w-[1920px] -translate-x-1/2': states.IS_LAUNCHED,
+          })}
+          src={bgLines}
+          width={1920}
+          height={398}
+          loading="eager"
+          alt=""
+        />
+      </div>
     </section>
   );
 };
