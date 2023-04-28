@@ -31,7 +31,7 @@ const Hero = () => {
     items,
     isLoading: isCountdownLoading,
     isLaunched,
-  } = useCountdown(new Date('Apr 1, 2023 00:00:00').getTime());
+  } = useCountdown(new Date('May 1, 2023 00:00:00').getTime());
 
   const { user, setUser, isLoading } = useUser();
   const { status } = useSession();
