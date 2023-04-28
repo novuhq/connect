@@ -196,7 +196,7 @@ const Swag = () => {
           </div>
         </div>
         <img
-          className="absolute bottom-[300px] left-0 md:hidden"
+          className="absolute bottom-[300px] left-0 -z-10 md:hidden"
           src={scene}
           width={1220}
           height={415}
