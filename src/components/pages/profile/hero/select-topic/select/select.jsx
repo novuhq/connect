@@ -26,9 +26,9 @@ const Select = forwardRef(
           </label>
           <div
             className={clsx(
-              'mt-2.5 flex h-14 cursor-pointer items-center justify-between overflow-hidden rounded border border-[rgba(255,255,255,0.1)] bg-gray-1 px-[18px] outline-none',
+              'mt-2.5 flex h-14 cursor-pointer items-center justify-between overflow-hidden rounded border border-[rgba(255,255,255,0.1)] bg-gray-1 px-[18px] outline-none transition-colors duration-200',
               {
-                'shadow-[0px_4px_14px_rgba(0,163,255,0.2)]': isOpen,
+                'border-[rgba(0,163,255,1)] shadow-[0px_4px_14px_rgba(0,163,255,0.2)]': isOpen,
               }
             )}
             role="button"

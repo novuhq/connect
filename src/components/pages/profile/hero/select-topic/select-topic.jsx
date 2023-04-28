@@ -3,12 +3,13 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import clsx from 'clsx';
 import { LazyMotion, m, domAnimation } from 'framer-motion';
+import PropTypes from 'prop-types';
 import React, { useRef, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useClickAway } from 'react-use';
 import * as yup from 'yup';
 
-import Button from 'components/shared/button';
+import Button, { BUTTON_STATES } from 'components/shared/button';
 import useCountdown from 'hooks/use-countdown';
 
 import Select from './select/select';
@@ -20,7 +21,8 @@ const validationSchema = yup.object().shape({
   }),
 });
 
-const SelectTopic = () => {
+const SelectTopic = ({ user }) => {
+  const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
   const [isSelectTopicOpen, setIsSelectTopicOpen] = useState(false);
   const [selectTopic, setSelectTopic] = useState('');
 
@@ -49,8 +51,26 @@ const SelectTopic = () => {
     setIsInputLanguageFocus(false);
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const { topic } = data;
+
+    setButtonState(BUTTON_STATES.LOADING);
+
+    try {
+      const response = await fetch(`/api/submit-topic?userId=${user.id}`, {
+        method: 'POST',
+        body: JSON.stringify({ topic, languages }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setButtonState(BUTTON_STATES.DEFAULT);
+      }
+    } catch (error) {
+      setButtonState(BUTTON_STATES.DEFAULT);
+    }
   };
 
   const handleSelectTopic = (topic) => () => {
@@ -137,16 +157,17 @@ const SelectTopic = () => {
 
           <div
             className={clsx(
-              'mt-2.5 flex h-14 items-center overflow-hidden whitespace-nowrap rounded border border-[rgba(255,255,255,0.1)] bg-gray-1 leading-none text-gray-9',
+              'mt-2.5 flex h-14 items-center overflow-hidden whitespace-nowrap rounded border border-[rgba(255,255,255,0.1)] bg-gray-1 leading-none text-gray-9 transition-colors duration-200',
               {
-                'shadow-[0px_4px_14px_rgba(0,163,255,0.2)]': isInputLanguageFocus,
+                'border-[rgba(0,163,255,1)] shadow-[0px_4px_14px_rgba(0,163,255,0.2)]':
+                  isInputLanguageFocus,
               }
             )}
           >
             <ul className="flex h-full gap-x-3.5 px-[9px] py-3">
               {languages.map((language, index) => (
                 <li
-                  className="flex h-full flex-shrink-0 cursor-pointer items-center rounded bg-gray-3 bg-secondary-2 px-3 text-14 font-medium leading-none leading-none text-black"
+                  className="flex h-full flex-shrink-0 cursor-pointer items-center rounded bg-secondary-2 px-3 text-14 font-medium leading-none text-black"
                   key={index}
                   onClick={handleDeleteLanguage(index)}
                 >
@@ -179,6 +200,7 @@ const SelectTopic = () => {
             size="md"
             theme="primary"
             type="submit"
+            state={buttonState}
           >
             <span className="z-10">
               {!!languages.length && selectTopic ? 'Submit a topic' : 'Select a topic'}
@@ -188,6 +210,12 @@ const SelectTopic = () => {
       </form>
     </div>
   );
+};
+
+SelectTopic.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.string,
+  }).isRequired,
 };
 
 export default SelectTopic;

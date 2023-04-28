@@ -3,7 +3,6 @@
 'use client';
 
 import clsx from 'clsx';
-import { LazyMotion, m, domAnimation } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
@@ -13,16 +12,18 @@ import AUTH_STATUS from 'constants/status';
 import useCountdown from 'hooks/use-countdown';
 import useUser from 'hooks/use-user';
 import GitHubIcon from 'icons/github.inline.svg';
-import bgCirclesLeft from 'images/profile/bg-cirles-left.svg';
-import bgCirclesRight from 'images/profile/bg-cirles-right.svg';
 import bgLines from 'images/profile/bg-lines.svg';
 
+import Congratulations from './congratulations';
+import CountdownTimer from './countdown-timer';
+import ProjectInformation from './project-information';
 import SelectTopic from './select-topic';
+import SubmitProject from './submit-project';
 import Timeline from './timeline';
 
 const STATES = {
   IS_SELECTED_TOPIC: false,
-  IS_SUBMITED_PROJECT: false,
+  IS_SUBMITTED_PROJECT: false,
 };
 
 const Hero = () => {
@@ -33,15 +34,25 @@ const Hero = () => {
     isLaunched,
   } = useCountdown(new Date('Apr 27, 2023 00:00:00').getTime());
   const { status } = useSession();
-
   const [states, setStates] = useState({ ...STATES, IS_LAUNCHED: isLaunched });
+
   const router = useRouter();
 
   useEffect(() => {
     if (isLaunched) {
       setStates((prev) => ({ ...prev, IS_LAUNCHED: true }));
     }
-  }, [isLaunched]);
+
+    if (user?.topic && !!user?.topicLanguages.length && !states.IS_SELECTED_TOPIC) {
+      setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
+    }
+
+    if (user?.projectUrl && !states.IS_SUBMITTED_PROJECT) {
+      setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLaunched, user]);
 
   if (status === AUTH_STATUS.LOADING || isLoading) {
     return (
@@ -57,7 +68,7 @@ const Hero = () => {
 
   return (
     <section className="safe-paddings relative pb-44 pt-32 md:pt-30 sm:pb-24 sm:pt-22">
-      <div className="container-lg">
+      <div className="container-lg relative">
         <div className="flex items-center gap-x-7 sm:flex-col sm:gap-x-0">
           <div className="profile-avatar group relative flex h-[152px] w-[152px] flex-shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-border">
             <img
@@ -87,73 +98,20 @@ const Hero = () => {
 
         <div className="grid-gap-x mt-10 grid grid-cols-10 md:flex md:flex-col">
           <div className="relative col-span-7 max-w-[756px] md:max-w-none">
-            <div className="relative overflow-hidden rounded-lg pb-28 pt-20 before:absolute before:inset-0 before:bg-[linear-gradient(225deg,#00AAFF_0%,#E0CAFF_80.36%)] before:opacity-10 sm:py-16">
-              {states.IS_LAUNCHED ? (
-                <div className="relative flex flex-col justify-center px-5 text-center">
-                  <h3 className="text-40 font-medium leading-tight sm:text-32">
-                    ConnectNovu started!
-                  </h3>
-                  <p className="mx-auto mt-3.5 max-w-[510px] text-18 leading-tight text-gray-8 sm:text-16">
-                    Сongratulations! Hackathon officially starts and you can select the theme you
-                    preferd. After you start to make your project and submit result until{' '}
-                    <span className="text-secondary-4">29 May 2023</span>.
-                  </p>
+            {!states.IS_LAUNCHED && <CountdownTimer isLoading={isCountdownLoading} items={items} />}
 
-                  <img
-                    className="absolute left-9 -z-10 sm:-left-10"
-                    src={bgCirclesLeft}
-                    height={237}
-                    width={177}
-                    loading="eager"
-                    alt=""
-                  />
-                  <img
-                    className="absolute right-10 -z-10 sm:-right-10"
-                    src={bgCirclesRight}
-                    height={249}
-                    width={115}
-                    loading="eager"
-                    alt=""
-                  />
-                </div>
-              ) : (
-                <div className="flex flex-col items-center">
-                  <h3 className="text-16 font-medium uppercase leading-none text-white">
-                    {states.IS_LAUNCHED ? 'Time to end' : 'Time to launch'}
-                  </h3>
-                  <LazyMotion features={domAnimation}>
-                    <m.div
-                      className="flex gap-x-18 md:gap-x-16 sm:gap-x-10 xs:gap-x-6"
-                      initial={{ opacity: 0 }}
-                      animate={!isCountdownLoading && { opacity: 1 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      {items.map(({ number, title }, index) => (
-                        <div
-                          className="group mt-7 flex w-[86px] flex-col items-center justify-center leading-none md:w-[76px] sm:w-14"
-                          key={index}
-                        >
-                          <span className="text-highlighting-blue-gradient after:font-book relative flex text-64 after:absolute after:-right-[64%] after:text-64 after:leading-none after:!text-gray-8 after:content-[':'] group-last:after:hidden after:md:text-56 after:sm:text-40 after:xs:-right-[80%] after:xs:text-28">
-                            <span className="font-medium md:text-56 sm:text-40 xs:text-28">
-                              {number}
-                            </span>
-                          </span>
-                          <span className="mt-2.5 text-14 font-medium uppercase text-gray-8 xs:text-12">
-                            {title}
-                          </span>
-                        </div>
-                      ))}
-                    </m.div>
-                  </LazyMotion>
-                </div>
-              )}
-            </div>
-            <Timeline className="hidden md:block" />
-            {states.IS_LAUNCHED && <SelectTopic />}
+            {states.IS_LAUNCHED && !states.IS_SELECTED_TOPIC && <Congratulations />}
+
+            {states.IS_SELECTED_TOPIC && <ProjectInformation user={user} />}
+
+            <Timeline className="hidden md:block" states={states} />
+
+            {states.IS_LAUNCHED && !states.IS_SELECTED_TOPIC && <SelectTopic user={user} />}
+            {states.IS_SELECTED_TOPIC && <SubmitProject user={user} states={states} />}
           </div>
 
           <div className="col-span-3 md:hidden">
-            <Timeline />
+            <Timeline states={states} />
           </div>
         </div>
       </div>
