@@ -1,23 +1,31 @@
 'use client';
 
-import { useState } from 'react';
-import useSWR from 'swr';
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import { useState, useEffect } from 'react';
 
 export default function useUser() {
+  const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
-  const { data, error } = useSWR('/api/user', fetcher);
 
-  // useEffect(() => {
-  //   if (data) {
-  //     setUser(data);
-  //   }
-  // }, [data]);
+  async function fetchUser() {
+    setIsLoading(true);
+    try {
+      const res = await fetch('/api/user');
+      const user = await res.json();
+      setUser(user);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return {
     user,
     setUser,
-    isLoading: !error && !data,
+    isLoading,
   };
 }
