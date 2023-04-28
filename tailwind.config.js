@@ -64,6 +64,9 @@ module.exports = {
       'card-gradient': 'linear-gradient(180deg, #1A1A1A 0%, rgba(26, 26, 26, 0.7) 100%)',
       ...defaultTheme.backgroundImage,
     },
+    boxShadow: {
+      card: '0px -6px 44px 30px rgba(0, 0, 0, 0.9)',
+    },
     screens: {
       '2xl': { max: '1919px' },
       xl: { max: '1535px' },
@@ -81,6 +84,9 @@ module.exports = {
         22: '5.75rem',
         30: '7.5rem',
         34: '8.5rem',
+      },
+      fontWeight: {
+        book: 350,
       },
     },
   },

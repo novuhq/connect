@@ -26,46 +26,45 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
           <img src={logo} width={102} height={32} loading="eager" alt="Novu" />
         </Link>
 
-        <div className="flex items-center space-x-16 lg:space-x-14">
-          <nav>
-            <ul className="flex space-x-8 md:hidden">
-              {MENUS.header.map(({ to, text, target }, index) => (
-                <li key={index}>
-                  <a
-                    className="inline-block text-14 leading-none text-white transition-colors duration-200 hover:text-primary-1"
-                    href={to}
-                    target={target}
-                  >
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="flex items-center space-x-8 md:hidden">
-            {user?.email && !isLoading && <Novu userEmail={user.email} />}
-            {user?.image && !isLoading ? (
-              <Link {...LINKS.profile}>
-                <img
-                  className="h-10 w-10 rounded-full"
-                  src={user.image}
-                  loading="eager"
-                  alt={user?.name || ''}
-                />
-              </Link>
-            ) : (
-              <Button
-                className="md:hidden"
-                size="xs"
-                theme="white-filled"
-                state={buttonState}
-                onClick={signIn}
-              >
-                Join Now
-              </Button>
-            )}
-          </div>
+        <nav className="absolute left-1/2 -translate-x-1/2">
+          <ul className="flex space-x-8 md:hidden">
+            {MENUS.header.map(({ to, text, target }, index) => (
+              <li key={index}>
+                <a
+                  className="inline-block text-14 leading-none text-white transition-colors duration-200 hover:text-primary-1"
+                  href={to}
+                  target={target}
+                >
+                  {text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="flex items-center space-x-8 md:hidden">
+          {user?.email && !isLoading && <Novu userEmail={user.email} />}
+          {user?.image && !isLoading ? (
+            <Link {...LINKS.profile}>
+              <img
+                className="h-10 w-10 rounded-full"
+                src={user.image}
+                loading="eager"
+                alt={user?.name || ''}
+              />
+            </Link>
+          ) : (
+            <Button
+              className="md:hidden"
+              size="xs"
+              theme="white-filled"
+              state={buttonState}
+              onClick={signIn}
+            >
+              Join Now
+            </Button>
+          )}
         </div>
+
         <div className="hidden items-center space-x-8 md:flex">
           <Novu />
           <Burger

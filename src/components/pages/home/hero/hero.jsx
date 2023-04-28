@@ -11,7 +11,7 @@ import useSignIn from 'hooks/use-sign-in';
 import GitHubIcon from 'icons/github.inline.svg';
 import bgLines from 'images/bg-lines.svg';
 
-const DATE = 'May 1-29';
+const DATE = '1-29 May, 2023';
 const TITLE = 'ConnectNovu';
 const DESCRIPTION =
   'Join ConnectNovu Hackathon, showcase your skills, push the boundaries of innovation, and meet like-minded community members.';
@@ -22,10 +22,10 @@ const Hero = () => {
   return (
     <section className="hero safe-paddings relative overflow-hidden pb-16 pt-36 lg:pt-32 md:pb-14 md:pt-30 sm:pt-22">
       <div className="container-lg relative flex flex-col items-center justify-center">
-        <span className="block text-center text-20 font-medium uppercase leading-none text-primary-1">
+        <span className="block text-center text-18 font-medium uppercase leading-none tracking-[-0.02em] text-primary-1">
           {DATE}
         </span>
-        <h1 className="mt-2 text-96 font-bold leading-denser md:text-64 sm:text-48">{TITLE}</h1>
+        <h1 className="mt-2.5 text-96 font-bold leading-denser md:text-64 sm:text-48">{TITLE}</h1>
         <p className="mt-5 max-w-[716px] text-center text-18 font-light md:max-w-[540px] md:text-16">
           {DESCRIPTION}
         </p>
