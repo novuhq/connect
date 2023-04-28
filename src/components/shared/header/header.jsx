@@ -48,6 +48,8 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
               <img
                 className="h-10 w-10 rounded-full"
                 src={user.image}
+                width={40}
+                height={40}
                 loading="eager"
                 alt={user?.name || ''}
               />
@@ -65,8 +67,21 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
           )}
         </div>
 
-        <div className="hidden items-center space-x-8 md:flex">
+        <div className="hidden items-center space-x-6 md:flex">
           <Novu />
+          {user?.image && !isLoading && (
+            <Link {...LINKS.profile}>
+              <img
+                className="h-8 w-8 rounded-full"
+                src={user.image}
+                width={32}
+                height={32}
+                loading="eager"
+                alt={user?.name || ''}
+              />
+            </Link>
+          )}
+
           <Burger
             className="hidden md:block"
             isToggled={isMobileMenuOpen}
