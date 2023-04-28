@@ -106,7 +106,9 @@ const Hero = () => {
 
             <Timeline className="hidden md:block" states={states} />
 
-            {states.IS_LAUNCHED && !states.IS_SELECTED_TOPIC && <SelectTopic user={user} />}
+            {states.IS_LAUNCHED && !states.IS_SELECTED_TOPIC && (
+              <SelectTopic user={user} setStates={setStates} />
+            )}
             {states.IS_SELECTED_TOPIC && <SubmitProject user={user} states={states} />}
           </div>
 
