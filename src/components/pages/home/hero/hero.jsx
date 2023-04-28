@@ -10,6 +10,7 @@ import AUTH_STATUS from 'constants/status';
 import useSignIn from 'hooks/use-sign-in';
 import GitHubIcon from 'icons/github.inline.svg';
 import bgLines from 'images/bg-lines.svg';
+import CheckIcon from 'images/home/hero/check.inline.svg';
 
 const DATE = '1-29 May, 2023';
 const TITLE = 'ConnectNovu';
@@ -38,7 +39,10 @@ const Hero = () => {
           onClick={status === AUTH_STATUS.UNAUTHENTICATED ? signIn : undefined}
         >
           {status === AUTH_STATUS.AUTHENTICATED ? (
-            <span className="z-10">Open Profile</span>
+            <>
+              <CheckIcon className="z-10 mr-4 h-6" />
+              <span className="z-10">You are registered</span>
+            </>
           ) : (
             <>
               <GitHubIcon className="z-10 mr-2 h-[26px] w-[26px]" />
