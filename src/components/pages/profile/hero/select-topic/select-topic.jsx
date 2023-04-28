@@ -67,11 +67,11 @@ const SelectTopic = ({ user, setStates }) => {
 
       if (response.ok) {
         setButtonState(BUTTON_STATES.DEFAULT);
-        setStates((prev) => ({ ...prev, IS_SUBMITTED_TOPIC: true }));
+        setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
       }
     } catch (error) {
-      console.log(error);
       setButtonState(BUTTON_STATES.DEFAULT);
+      console.log(error);
     }
   };
 

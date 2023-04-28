@@ -54,7 +54,7 @@ const Hero = () => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLaunched, user, states.IS_SELECTED_TOPIC, states.IS_SUBMITTED_PROJECT]);
+  }, [isLaunched, user]);
 
   if (status === AUTH_STATUS.LOADING || isLoading) {
     return (
