@@ -12,7 +12,7 @@ const CountdownTimer = () => {
   const { items, isLaunched } = useCountdown();
 
   return (
-    <section className="countdown-timer safe-paddings py-16 sm:py-12">
+    <section className="countdown-timer safe-paddings pb-16 pt-[70px] sm:py-12">
       <div className="container-lg">
         <div className="flex gap-x-8 lg:flex-col lg:items-center lg:gap-x-0 lg:gap-y-10 lg:text-center">
           <div className="flex-1">
