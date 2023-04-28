@@ -27,7 +27,8 @@ const FAQ_DATA = [
   },
   {
     question: 'What is the maximum number of people allowed to participate in a team?',
-    answer: 'You can participate in a team of up to 5 people, however, the prize will be shared between the teammates',
+    answer:
+      'You can participate in a team of up to 5 people, however, the prize will be shared between the teammates',
   },
   {
     question: 'How many projects can you submit?',

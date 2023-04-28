@@ -86,9 +86,11 @@ const SelectTopic = () => {
   useEffect(() => setValue('topic', selectTopic), [setValue, selectTopic]);
 
   return (
-    <div className="relative mt-10 rounded-lg px-7 py-5 before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-[rgba(26,26,26,0.8)] before:backdrop-blur-[22px] sm:px-4">
+    <div className="relative mt-10 rounded-lg border-2 border-[rgba(224,202,255,0.8)] px-7 py-5 before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-[rgba(26,26,26,0.8)] before:backdrop-blur-[22px] sm:px-4">
       <div className="flex items-end justify-between [@media(max-width:540px)]:flex-col [@media(max-width:540px)]:items-center [@media(max-width:540px)]:gap-y-3.5">
-        <span className="text-24 font-medium leading-tight">Select a topic</span>
+        <div className="text-highlighting-blue-gradient">
+          <span className="text-24 font-medium leading-tight">Select a topic</span>
+        </div>
         <div className="flex items-center gap-x-1.5">
           <span className="text-16 leading-tight text-gray-8 xs:text-14">Until the end:</span>
 

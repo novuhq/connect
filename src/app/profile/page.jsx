@@ -1,7 +1,7 @@
-import FAQ from 'components/pages/home/faq';
-import Swag from 'components/pages/home/swag';
 import Hero from 'components/pages/profile/hero';
+import FAQ from 'components/shared/faq';
 import MainLayout from 'components/shared/main-layout';
+import Swag from 'components/shared/swag';
 
 const Profile = () => (
   <MainLayout>
