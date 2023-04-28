@@ -15,13 +15,13 @@ const ProjectInformation = () => {
       <div className="mt-8 flex flex-col divide-y divide-gray-4">
         <div className="flex flex-col pb-5">
           <span className="text-14 leading-none text-gray-9">Topic</span>
-          <span className="mt-2 text-18 font-medium leading-tight sm:text-16">{user.topic}</span>
+          <span className="mt-2 text-18 font-medium leading-tight sm:text-16">{user?.topic}</span>
         </div>
 
         <div className="flex flex-col py-5">
           <span className="text-14 leading-none text-gray-9">Programming languages</span>
           <ul className="mt-4 flex h-full gap-x-3.5">
-            {user.topicLanguages.map((language, index) => (
+            {user?.topicLanguages.map((language, index) => (
               <li
                 className="flex h-[30px] flex-shrink-0 items-center rounded bg-secondary-2 px-3 text-14 font-medium leading-none text-black"
                 key={index}
