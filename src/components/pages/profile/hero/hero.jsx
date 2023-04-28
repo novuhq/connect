@@ -27,7 +27,7 @@ const STATES = {
 };
 
 const Hero = () => {
-  const { user, isLoading } = useUser();
+  const { user, setUser, isLoading } = useUser();
   const {
     items,
     isLoading: isCountdownLoading,
@@ -37,8 +37,6 @@ const Hero = () => {
   const [states, setStates] = useState({ ...STATES, IS_LAUNCHED: isLaunched });
 
   const router = useRouter();
-
-  console.log(states);
 
   useEffect(() => {
     if (isLaunched) {
@@ -109,10 +107,10 @@ const Hero = () => {
             <Timeline className="hidden md:block" states={states} />
 
             {states.IS_LAUNCHED && !states.IS_SELECTED_TOPIC && (
-              <SelectTopic user={user} setStates={setStates} />
+              <SelectTopic user={user} setStates={setStates} setUser={setUser} />
             )}
             {states.IS_SELECTED_TOPIC && (
-              <SubmitProject user={user} states={states} setStates={setStates} />
+              <SubmitProject user={user} states={states} setStates={setStates} setUser={setUser} />
             )}
           </div>
 

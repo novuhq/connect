@@ -16,7 +16,7 @@ const validationSchema = yup.object().shape({
   repositoryUrl: yup.string().required('Please provide a link to the repository'),
   description: yup.string().required('Please provide a description'),
 });
-const SubmitProject = ({ user, states, setStates }) => {
+const SubmitProject = ({ user, states, setStates, setUser }) => {
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
 
   const { items, isLoading: isCountdownLoading } = useCountdown(
@@ -44,10 +44,11 @@ const SubmitProject = ({ user, states, setStates }) => {
           'Content-Type': 'application/json',
         },
       });
-
+      console.log(response);
       if (response.ok) {
         setButtonState(BUTTON_STATES.DEFAULT);
         setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
+        setUser(response);
       }
     } catch (error) {
       setButtonState(BUTTON_STATES.DEFAULT);
@@ -187,6 +188,7 @@ SubmitProject.propTypes = {
     IS_SUBMITTED_PROJECT: PropTypes.bool,
   }).isRequired,
   setStates: PropTypes.func.isRequired,
+  setUser: PropTypes.func.isRequired,
 };
 
 export default SubmitProject;

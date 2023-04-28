@@ -21,7 +21,7 @@ const validationSchema = yup.object().shape({
   }),
 });
 
-const SelectTopic = ({ user, setStates }) => {
+const SelectTopic = ({ user, setStates, setUser }) => {
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
   const [isSelectTopicOpen, setIsSelectTopicOpen] = useState(false);
   const [selectTopic, setSelectTopic] = useState('');
@@ -68,6 +68,7 @@ const SelectTopic = ({ user, setStates }) => {
       if (response.ok) {
         setButtonState(BUTTON_STATES.DEFAULT);
         setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
+        setUser(response);
       }
     } catch (error) {
       setButtonState(BUTTON_STATES.DEFAULT);
@@ -219,6 +220,7 @@ SelectTopic.propTypes = {
     id: PropTypes.string,
   }).isRequired,
   setStates: PropTypes.func.isRequired,
+  setUser: PropTypes.func.isRequired,
 };
 
 export default SelectTopic;
