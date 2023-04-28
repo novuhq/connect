@@ -9,7 +9,7 @@ const ProjectInformation = ({ user }) => (
     <div className="mt-8 flex flex-col divide-y divide-gray-4">
       <div className="flex flex-col pb-5">
         <span className="text-14 leading-none text-gray-9">Topic</span>
-        <span className="mt-2 text-18 font-medium leading-tight">{user.topic}</span>
+        <span className="mt-2 text-18 font-medium leading-tight sm:text-16">{user.topic}</span>
       </div>
 
       <div className="flex flex-col py-5">
@@ -33,7 +33,7 @@ const ProjectInformation = ({ user }) => (
           })}
         >
           <span className="text-14 leading-none text-gray-9">Repository url</span>
-          <span className="mt-2 break-all text-18 font-medium leading-tight">
+          <span className="mt-2 break-all text-18 font-medium leading-tight sm:text-16">
             {user.projectUrl}
           </span>
         </div>
@@ -42,7 +42,9 @@ const ProjectInformation = ({ user }) => (
       {user?.projectDescription && (
         <div className="flex flex-col pt-5">
           <span className="text-14 leading-none text-gray-9">Description of the project</span>
-          <span className="mt-2 text-18 font-book leading-tight">{user.projectDescription}</span>
+          <span className="mt-2 text-18 font-book leading-tight sm:text-16">
+            {user.projectDescription}
+          </span>
         </div>
       )}
     </div>
