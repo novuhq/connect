@@ -27,15 +27,16 @@ const STATES = {
 };
 
 const Hero = () => {
-  const { user, setUser, isLoading } = useUser();
   const {
     items,
     isLoading: isCountdownLoading,
     isLaunched,
   } = useCountdown(new Date('Apr 1, 2023 00:00:00').getTime());
-  const { status } = useSession();
-  const [states, setStates] = useState({ ...STATES, IS_LAUNCHED: isLaunched });
 
+  const { user, setUser, isLoading } = useUser();
+  const { status } = useSession();
+
+  const [states, setStates] = useState({ ...STATES, IS_LAUNCHED: isLaunched });
   const router = useRouter();
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const Hero = () => {
     );
   }
 
-  if (status === 'unauthenticated') {
+  if (status === AUTH_STATUS.UNAUTHENTICATED) {
     return router.push('/');
   }
 
