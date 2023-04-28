@@ -16,8 +16,7 @@ const validationSchema = yup.object().shape({
   repositoryUrl: yup.string().required('Please provide a link to the repository'),
   description: yup.string().required('Please provide a description'),
 });
-const SubmitProject = ({ user, states }) => {
-  const [isSubmitted, setIsSubmitted] = useState(states.IS_SUBMITTED_PROJECT);
+const SubmitProject = ({ user, states, setStates }) => {
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
 
   const { items, isLoading: isCountdownLoading } = useCountdown(
@@ -48,10 +47,11 @@ const SubmitProject = ({ user, states }) => {
 
       if (response.ok) {
         setButtonState(BUTTON_STATES.DEFAULT);
-        setIsSubmitted(true);
+        setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
       }
     } catch (error) {
       setButtonState(BUTTON_STATES.DEFAULT);
+      console.log(error);
     }
   };
 
@@ -59,7 +59,7 @@ const SubmitProject = ({ user, states }) => {
     <div className="relative mt-10 rounded-lg border-2 border-[rgba(224,202,255,0.8)] px-7 py-5 before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-[rgba(26,26,26,0.8)] before:backdrop-blur-[22px] sm:px-4">
       <LazyMotion features={domAnimation}>
         <AnimatePresence>
-          {isSubmitted && (
+          {states.IS_SUBMITTED_PROJECT && (
             <m.div
               className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center px-4"
               initial={{ opacity: 0 }}
@@ -86,7 +86,7 @@ const SubmitProject = ({ user, states }) => {
           )}
         </AnimatePresence>
 
-        <div className={clsx(isSubmitted && 'invisible opacity-0')}>
+        <div className={clsx(states.IS_SUBMITTED_PROJECT && 'invisible opacity-0')}>
           <div className="flex items-end justify-between [@media(max-width:540px)]:flex-col [@media(max-width:540px)]:items-center [@media(max-width:540px)]:gap-y-3.5">
             <div className="text-highlighting-blue-gradient">
               <span className="text-24 font-medium leading-tight">Submit your project</span>
@@ -186,6 +186,7 @@ SubmitProject.propTypes = {
   states: PropTypes.shape({
     IS_SUBMITTED_PROJECT: PropTypes.bool,
   }).isRequired,
+  setStates: PropTypes.func.isRequired,
 };
 
 export default SubmitProject;

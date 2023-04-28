@@ -109,7 +109,9 @@ const Hero = () => {
             {states.IS_LAUNCHED && !states.IS_SELECTED_TOPIC && (
               <SelectTopic user={user} setStates={setStates} />
             )}
-            {states.IS_SELECTED_TOPIC && <SubmitProject user={user} states={states} />}
+            {states.IS_SELECTED_TOPIC && (
+              <SubmitProject user={user} states={states} setStates={setStates} />
+            )}
           </div>
 
           <div className="col-span-3 md:hidden">
