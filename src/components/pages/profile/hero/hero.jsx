@@ -32,7 +32,7 @@ const Hero = () => {
     items,
     isLoading: isCountdownLoading,
     isLaunched,
-  } = useCountdown(new Date('Apr 27, 2023 00:00:00').getTime());
+  } = useCountdown(new Date('Apr 1, 2023 00:00:00').getTime());
   const { status } = useSession();
   const [states, setStates] = useState({ ...STATES, IS_LAUNCHED: isLaunched });
 
@@ -43,11 +43,11 @@ const Hero = () => {
       setStates((prev) => ({ ...prev, IS_LAUNCHED: true }));
     }
 
-    if (user?.topic && !!user?.topicLanguages.length && !states.IS_SELECTED_TOPIC) {
+    if (user?.topic && !!user?.topicLanguages.length && !states.IS_SELECTED_TOPIC && !isLaunched) {
       setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
     }
 
-    if (user?.projectUrl && !states.IS_SUBMITTED_PROJECT) {
+    if (user?.projectUrl && !states.IS_SUBMITTED_PROJECT && !isLaunched) {
       setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
     }
 

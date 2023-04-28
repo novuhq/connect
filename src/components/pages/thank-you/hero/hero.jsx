@@ -32,8 +32,8 @@ const Hero = () => (
         {TITLE}
       </h1>
       <p className="mt-5 text-center text-24 md:text-20 sm:text-16">{DESCRIPTION}</p>
-      <Button className="mt-10 xs:text-12" to="/" size="md" theme="primary">
-        <span className="z-10">Back to homepage</span>
+      <Button className="mt-10 xs:text-12" to="/profile" size="md" theme="primary">
+        <span className="z-10">Open profile</span>
       </Button>
 
       <div className="absolute bottom-20 md:bottom-12">

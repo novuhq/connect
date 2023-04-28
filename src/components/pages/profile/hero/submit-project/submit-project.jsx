@@ -44,11 +44,13 @@ const SubmitProject = ({ user, states, setStates, setUser }) => {
           'Content-Type': 'application/json',
         },
       });
-      console.log(response);
+
+      const data = await response.json();
+
       if (response.ok) {
+        setUser(data);
         setButtonState(BUTTON_STATES.DEFAULT);
         setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
-        setUser(response);
       }
     } catch (error) {
       setButtonState(BUTTON_STATES.DEFAULT);
@@ -57,7 +59,7 @@ const SubmitProject = ({ user, states, setStates, setUser }) => {
   };
 
   return (
-    <div className="relative mt-10 rounded-lg border-2 border-[rgba(224,202,255,0.8)] px-7 py-5 before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-[rgba(26,26,26,0.8)] before:backdrop-blur-[22px] sm:px-4">
+    <div className="relative mt-10 rounded-lg border-2 border-[rgba(224,202,255,0.8)] px-7 pb-9 pt-5 before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-[rgba(26,26,26,0.8)] before:backdrop-blur-[22px] sm:px-4">
       <LazyMotion features={domAnimation}>
         <AnimatePresence>
           {states.IS_SUBMITTED_PROJECT && (
@@ -137,7 +139,7 @@ const SubmitProject = ({ user, states, setStates, setUser }) => {
               />
 
               {errors?.repositoryUrl && (
-                <span className="absolute -bottom-2 left-0 translate-y-full text-12 leading-none text-gray-8">
+                <span className="absolute -bottom-2 left-0 translate-y-full text-12 font-book leading-none text-[rgba(255,255,255,0.4)]">
                   {errors.repositoryUrl.message}
                 </span>
               )}
@@ -156,7 +158,7 @@ const SubmitProject = ({ user, states, setStates, setUser }) => {
               />
 
               {errors?.description && (
-                <span className="absolute -bottom-2 left-0 translate-y-full text-12 leading-none text-gray-8">
+                <span className="absolute -bottom-2 left-0 translate-y-full text-12 font-book leading-none text-[rgba(255,255,255,0.4)]">
                   {errors.description.message}
                 </span>
               )}

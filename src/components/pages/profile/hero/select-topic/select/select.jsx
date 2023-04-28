@@ -28,7 +28,7 @@ const Select = forwardRef(
             className={clsx(
               'mt-2.5 flex h-14 cursor-pointer items-center justify-between overflow-hidden rounded border border-[rgba(255,255,255,0.1)] bg-gray-1 px-[18px] outline-none transition-colors duration-200',
               {
-                'border-[rgba(0,163,255,1)] shadow-[0px_4px_14px_rgba(0,163,255,0.2)]': isOpen,
+                '!border-[rgba(0,163,255,1)] shadow-[0px_4px_14px_rgba(0,163,255,0.2)]': isOpen,
               }
             )}
             role="button"
@@ -75,7 +75,7 @@ const Select = forwardRef(
           </LazyMotion>
 
           {error && (
-            <span className="absolute -bottom-2 left-0 translate-y-full text-12 leading-none text-gray-8">
+            <span className="absolute -bottom-2 left-0 translate-y-full text-12 font-book leading-none text-[rgba(255,255,255,0.4)]">
               {error}
             </span>
           )}
@@ -100,7 +100,7 @@ const Select = forwardRef(
           </select>
 
           {error && (
-            <span className="absolute -bottom-2 left-0 translate-y-full text-12 leading-none text-gray-8">
+            <span className="absolute -bottom-2 left-0 translate-y-full text-12 font-book leading-none text-[rgba(255,255,255,0.4)]">
               {error}
             </span>
           )}

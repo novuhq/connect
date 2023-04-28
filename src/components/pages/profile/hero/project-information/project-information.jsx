@@ -33,9 +33,14 @@ const ProjectInformation = ({ user }) => (
           })}
         >
           <span className="text-14 leading-none text-gray-9">Repository url</span>
-          <span className="mt-2 break-all text-18 font-medium leading-tight sm:text-16">
+          <a
+            className="mt-2 break-all text-18 font-book leading-tight text-primary-1 transition-colors duration-200 hover:text-white sm:text-16"
+            href={user.projectUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             {user.projectUrl}
-          </span>
+          </a>
         </div>
       )}
 

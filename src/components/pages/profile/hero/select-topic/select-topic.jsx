@@ -64,10 +64,10 @@ const SelectTopic = ({ user, setStates, setUser }) => {
           'Content-Type': 'application/json',
         },
       });
+      const data = await response.json();
 
-      console.log(response);
       if (response.ok) {
-        setUser(response);
+        setUser(data);
         setButtonState(BUTTON_STATES.DEFAULT);
         setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
       }
@@ -110,7 +110,7 @@ const SelectTopic = ({ user, setStates, setUser }) => {
   useEffect(() => setValue('topic', selectTopic), [setValue, selectTopic]);
 
   return (
-    <div className="relative mt-10 rounded-lg border-2 border-[rgba(224,202,255,0.8)] px-7 py-5 before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-[rgba(26,26,26,0.8)] before:backdrop-blur-[22px] sm:px-4">
+    <div className="relative mt-10 rounded-lg border-2 border-[rgba(224,202,255,0.8)] px-7 pb-9 pt-5 before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-[rgba(26,26,26,0.8)] before:backdrop-blur-[22px] sm:px-4">
       <div className="flex items-end justify-between [@media(max-width:540px)]:flex-col [@media(max-width:540px)]:items-center [@media(max-width:540px)]:gap-y-3.5">
         <div className="text-highlighting-blue-gradient">
           <span className="text-24 font-medium leading-tight">Select a topic</span>
@@ -163,7 +163,7 @@ const SelectTopic = ({ user, setStates, setUser }) => {
             className={clsx(
               'mt-2.5 flex h-14 items-center overflow-hidden whitespace-nowrap rounded border border-[rgba(255,255,255,0.1)] bg-gray-1 leading-none text-gray-9 transition-colors duration-200',
               {
-                'border-[rgba(0,163,255,1)] shadow-[0px_4px_14px_rgba(0,163,255,0.2)]':
+                '!border-[rgba(0,163,255,1)] shadow-[0px_4px_14px_rgba(0,163,255,0.2)]':
                   isInputLanguageFocus,
               }
             )}
@@ -192,7 +192,7 @@ const SelectTopic = ({ user, setStates, setUser }) => {
           </div>
 
           {errors?.languages && (
-            <span className="absolute -bottom-2 left-0 translate-y-full text-12 leading-none text-gray-8">
+            <span className="absolute -bottom-2 left-0 translate-y-full text-12 font-book leading-none text-[rgba(255,255,255,0.4)]">
               {errors.languages.message}
             </span>
           )}
