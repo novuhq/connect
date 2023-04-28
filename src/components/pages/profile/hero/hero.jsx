@@ -38,6 +38,8 @@ const Hero = () => {
 
   const router = useRouter();
 
+  console.log(states);
+
   useEffect(() => {
     if (isLaunched) {
       setStates((prev) => ({ ...prev, IS_LAUNCHED: true }));
@@ -52,7 +54,7 @@ const Hero = () => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLaunched, user]);
+  }, [isLaunched, user, states.IS_SELECTED_TOPIC, states.IS_SUBMITTED_PROJECT]);
 
   if (status === AUTH_STATUS.LOADING || isLoading) {
     return (
