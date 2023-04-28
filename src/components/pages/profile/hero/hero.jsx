@@ -44,7 +44,17 @@ const Hero = () => {
     if (isLaunched) {
       setStates((prev) => ({ ...prev, IS_LAUNCHED: true }));
     }
-  }, [isLaunched]);
+
+    if (user?.topic && !!user?.topicLanguages.length && !states.IS_SELECTED_TOPIC) {
+      setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
+    }
+
+    if (user?.projectUrl && !states.IS_SUBMITTED_PROJECT) {
+      setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLaunched, user]);
 
   if (status === AUTH_STATUS.LOADING || isLoading) {
     return (
