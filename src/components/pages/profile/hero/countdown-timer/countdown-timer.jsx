@@ -8,18 +8,20 @@ const CountdownTimer = ({ items, isLoading = false }) => (
       <h3 className="text-16 font-medium uppercase leading-none text-white">Time to launch</h3>
       <LazyMotion features={domAnimation}>
         <m.div
-          className="flex gap-x-18 md:gap-x-16 sm:gap-x-10 xs:gap-x-6"
+          className="mt-7 flex gap-x-18 md:gap-x-16 sm:gap-x-10 xs:gap-x-6"
           initial={{ opacity: 0 }}
           animate={!isLoading && { opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           {items.map(({ number, title }, index) => (
             <div
-              className="group mt-7 flex w-[86px] flex-col items-center justify-center leading-none md:w-[76px] sm:w-14"
+              className="group relative flex w-[77px] flex-col items-center justify-center leading-none after:absolute after:-right-10 after:-top-0.5 after:text-64 after:font-book after:leading-none after:!text-gray-8 after:content-[':'] last:after:hidden after:md:text-56 sm:w-14 sm:after:-right-6 after:sm:text-40 after:xs:text-28"
               key={index}
             >
-              <span className="text-highlighting-blue-gradient relative flex text-64 after:absolute after:-right-[64%] after:text-64 after:font-book after:leading-none after:!text-gray-8 after:content-[':'] group-last:after:hidden after:md:text-56 after:sm:text-40 after:xs:-right-[80%] after:xs:text-28">
-                <span className="font-medium md:text-56 sm:text-40 xs:text-28">{number}</span>
+              <span className="text-highlighting-blue-gradient flex">
+                <span className="text-64 font-medium md:text-56 sm:text-40 xs:text-28">
+                  {number}
+                </span>
               </span>
               <span className="mt-2.5 text-14 font-medium uppercase text-gray-8 xs:text-12">
                 {title}

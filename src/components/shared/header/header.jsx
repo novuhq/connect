@@ -46,7 +46,7 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
           {user?.image && !isLoading ? (
             <Link {...LINKS.profile}>
               <img
-                className="h-10 w-10 rounded-full"
+                className="h-10 w-10 rounded-full grayscale transition-all duration-200 group-hover:grayscale-0"
                 src={user.image}
                 width={40}
                 height={40}
@@ -72,7 +72,7 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
           {user?.image && !isLoading && (
             <Link {...LINKS.profile}>
               <img
-                className="h-8 w-8 rounded-full"
+                className="h-8 w-8 rounded-full grayscale transition-all duration-200 group-hover:grayscale-0"
                 src={user.image}
                 width={32}
                 height={32}
