@@ -23,4 +23,37 @@
       }
     }
   }
+
+  .profile-avatar::before {
+    @apply absolute bottom-0 left-0 right-0 top-0 rounded-[inherit] transition-all duration-200 content-[''];
+
+    background: linear-gradient(-160deg, rgba(0, 163, 255, 1), rgba(128, 44, 255, 1));
+  }
+
+  .profile-avatar:hover::before {
+    filter: grayscale(1);
+  }
+
+  .profile-avatar::after {
+    @apply absolute left-auto top-auto h-36 w-36 rounded-[inherit] bg-black content-[''];
+  }
+
+  .timeline-item-active {
+    background: linear-gradient(black, black) padding-box,
+      linear-gradient(45deg, rgba(136, 51, 255, 1), rgba(0, 170, 255, 1)) border-box;
+    border: 3px solid transparent;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      filter: blur(5px);
+      box-shadow: 0 0 1px rgba(0, 170, 255, 1), 0 0 15px rgba(136, 51, 255, 1),
+        inset 0 0 10px rgba(136, 51, 255, 1);
+    }
+  }
 }

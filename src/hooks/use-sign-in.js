@@ -1,19 +1,34 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
-import { useState } from 'react';
+import { signIn, useSession } from 'next-auth/react';
+import { useMemo, useEffect, useState } from 'react';
 
 import { BUTTON_STATES } from 'components/shared/button';
+import AUTH_STATUS from 'constants/status';
 
 export default function useSignIn() {
+  const [isLoadingState, setIsLoadingState] = useState(false);
+  const { data, status } = useSession();
   const [buttonState, setButtonState] = useState(BUTTON_STATES.DEFAULT);
+  const isLoading = useMemo(
+    () => isLoadingState || status === AUTH_STATUS.LOADING,
+    [isLoadingState, status]
+  );
 
   const handleSignIn = (e) => {
     e.preventDefault();
-
+    setIsLoadingState(true);
     setButtonState(BUTTON_STATES.LOADING);
     signIn('github', { callbackUrl: '/thank-you/' });
   };
 
-  return { buttonState, signIn: handleSignIn };
+  useEffect(() => {
+    if (isLoading) {
+      setButtonState(BUTTON_STATES.LOADING);
+    } else {
+      setButtonState(BUTTON_STATES.DEFAULT);
+    }
+  }, [isLoading]);
+
+  return { data, buttonState, signIn: handleSignIn, status, isLoading };
 }

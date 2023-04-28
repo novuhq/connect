@@ -49,7 +49,7 @@ const Button = ({
           <span className="flex opacity-0">{children}</span>
           <span
             className={clsx(
-              'absolute h-7 w-7 flex-shrink-0 animate-spin rounded-full border border-b border-transparent border-b-white',
+              'absolute h-7 w-7 flex-shrink-0 animate-spin rounded-full border border-b border-transparent',
               {
                 'border-b-white': theme === 'primary',
                 'border-b-black': theme === 'white-filled',

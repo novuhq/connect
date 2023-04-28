@@ -41,7 +41,7 @@ const Question = ({ question, answer }) => {
         variants={variantsAnimation}
         transition={{ duration: ANIMATION_DURATION }}
       >
-        <div className="font-book with-list pb-5 pt-3 text-left text-18 text-gray-10 md:mr-14 sm:mr-7 sm:text-16">
+        <div className="with-list pb-5 pt-3 text-left text-18 font-book text-gray-10 md:mr-14 sm:mr-7 sm:text-16">
           {answer}
         </div>
       </motion.div>
