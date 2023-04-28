@@ -61,7 +61,7 @@ const SubmitProject = ({ user, states }) => {
         <AnimatePresence>
           {isSubmitted && (
             <m.div
-              className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center"
+              className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -74,8 +74,10 @@ const SubmitProject = ({ user, states }) => {
                 alt=""
               />
               <div className="mt-8 flex max-w-[504px] flex-col text-center">
-                <span className="text-40 font-medium leading-tight">Your project submitted!</span>
-                <p className="mt-4 text-18 font-light leading-tight">
+                <span className="text-40 font-medium leading-tight sm:text-32">
+                  Your project submitted!
+                </span>
+                <p className="mt-4 text-18 font-light leading-tight sm:text-16">
                   We will review project in a few days and you can check the result score here. Be
                   in touch!
                 </p>
