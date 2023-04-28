@@ -22,7 +22,7 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
         <Link {...LINKS.home}>
           <img src={logo} width={102} height={32} loading="eager" alt="Novu" />
         </Link>
-        <nav>
+        <nav className="absolute left-1/2 -translate-x-1/2">
           <ul className="flex space-x-8 md:hidden">
             {MENUS.header.map(({ to, text, target }, index) => (
               <li key={index}>
