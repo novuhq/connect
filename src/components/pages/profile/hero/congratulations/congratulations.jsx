@@ -9,6 +9,7 @@ const Congratulations = () => (
       <h3 className="text-40 font-medium leading-tight sm:text-32">ConnectNovu started!</h3>
       <p className="mx-auto mt-3.5 max-w-[510px] text-18 leading-tight text-gray-8 sm:text-16">
         Congratulations! Hackathon officially started.
+        <br />
         <a
           className="text-emerald-400 leading-tight text-primary-1 transition-colors duration-200 hover:text-white"
           href="https://github.com/novuhq/connect-readme"
