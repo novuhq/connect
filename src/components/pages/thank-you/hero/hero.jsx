@@ -17,15 +17,24 @@ const DESCRIPTION = (
   <>
     Thank you for registering for the Hackathon! 🚀
     <br />
-    <a className="text-emerald-400" href="https://github.com/novuhq/connect-readme" target="_blank" rel="noreferrer">
+    <a
+      className="text-emerald-400 leading-tight text-primary-1 transition-colors duration-200 hover:text-white"
+      href="https://github.com/novuhq/connect-readme"
+      target="_blank"
+      rel="noreferrer"
+    >
       Before you start, please clone this project and update README.md to match your project.
     </a>
-    <br />
-    Need help using Novu?
-    <br />
-    <a href="https://zoom.us/webinar/register/WN_BdYumOf3Rrumj_nhHGKHRA">
-      Register to our webinar on May 4th, we will build a sample app together!
-    </a>
+    <p>Need help using Novu?</p>
+    <p>
+      <a
+        target="_blank"
+        href="https://zoom.us/webinar/register/WN_BdYumOf3Rrumj_nhHGKHRA"
+        className="leading-tight text-primary-1 transition-colors duration-200 hover:text-white" rel="noreferrer"
+      >
+        Register to our webinar on May 4th, we will build a sample app together!
+      </a>
+    </p>
   </>
 );
 

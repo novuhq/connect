@@ -8,16 +8,18 @@ const Congratulations = () => (
     <div className="relative flex flex-col justify-center px-5 text-center">
       <h3 className="text-40 font-medium leading-tight sm:text-32">ConnectNovu started!</h3>
       <p className="mx-auto mt-3.5 max-w-[510px] text-18 leading-tight text-gray-8 sm:text-16">
-        Сongratulations! Hackathon officially starts and you can select the theme you preferd. After
-        you start to make your project and submit result until{' '}
-        <span className="text-secondary-4">29 May 2023</span>.<br />
+        Congratulations! Hackathon officially started.
         <a
-          className="text-emerald-400"
+          className="text-emerald-400 leading-tight text-primary-1 transition-colors duration-200 hover:text-white"
           href="https://github.com/novuhq/connect-readme"
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noreferrer"
         >
           Please clone this project and update README.md to match your project.
         </a>
+        <br />
+        Please make your project and submit result until{' '}
+        <span className="text-secondary-4">29 May 2023</span>.<br />
       </p>
 
       <img
