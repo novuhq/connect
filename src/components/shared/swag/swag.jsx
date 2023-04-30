@@ -36,7 +36,7 @@ const PLACES = [
         title: 'A special place in Novu’s Community Heroes',
       },
       {
-        title: 'Becoming a Novu ambassador',
+        title: 'Becoming a Novu community ambassador',
         tooltip: (
           <>
             1. Special tag on Discord
@@ -68,7 +68,7 @@ const PLACES = [
         title: 'A special place in Novu’s Community Heroes',
       },
       {
-        title: 'Becoming a Novu ambassador',
+        title: 'Becoming a Novu community ambassador',
         tooltip: (
           <>
             1. Special tag on Discord
@@ -88,7 +88,7 @@ const PLACES = [
     image: third,
     items: [
       {
-        title: 'Becoming a Novu ambassador',
+        title: 'Becoming a Novu community ambassador',
         tooltip: (
           <>
             1. Special tag on Discord
@@ -111,7 +111,7 @@ const PLACES = [
     image: fourth,
     items: [
       {
-        title: 'Becoming a Novu ambassador',
+        title: 'Becoming a Novu community ambassador',
         tooltip: (
           <>
             1. Special tag on Discord

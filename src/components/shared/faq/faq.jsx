@@ -1,10 +1,35 @@
 import React from 'react';
 
-import Link from 'components/shared/link';
-
 import Question from './question';
 
 const FAQ_DATA = [
+  {
+    question: 'What are the main requirements for the project?',
+    answer: (
+      <>
+        The project must have the following:
+        <ul>
+          <li>
+            Using Novu and sending notifications from at least one channel,{' '}
+            <a target="_blank" href="https://docs.novu.co" rel="noreferrer">
+              please make sure you read our documentation
+            </a>{' '}
+            and{' '}
+            <a target="_blank" href="https://web.novu.co" rel="noreferrer">
+              register to Novu
+            </a>
+          </li>
+          <li>Have a frontend and a backend</li>
+          <li>
+            Have been forked from the{' '}
+            <a href="https://github.com/novuhq/connect-readme" target="_blank" rel="noreferrer">
+              ConnectNovu README repository
+            </a>
+          </li>
+        </ul>
+      </>
+    ),
+  },
   {
     question: 'What categories will participants be ranked?',
     answer: (
@@ -16,10 +41,6 @@ const FAQ_DATA = [
           <li>Quality and completeness of the solution</li>
           <li>User experience and design</li>
         </ul>
-        Where one is the lowest number, and ten is the highest, the leader board can be found{' '}
-        <Link to="/" target="_blank" rel="noreferrer" theme="primary">
-          here
-        </Link>
         . <br />
         The judges will be a mix of industry experts and Novu team members.
       </>
@@ -37,7 +58,7 @@ const FAQ_DATA = [
   {
     question: 'What frameworks can be used for the project?',
     answer:
-      'You can use any framework for the backend, however, Having a front for the project is a must and can be used by any framework (ex. React, Angular, Vue, Salvte, Vanilla).',
+      'You can use any framework for the backend, however, Having a front for the project is a must and can be used by any framework (ex. React, Angular, Vue, Svelte, Vanilla).',
   },
   {
     question: 'What languages can be chosen for the backend?',

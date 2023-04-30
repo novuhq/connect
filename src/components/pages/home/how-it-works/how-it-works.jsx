@@ -31,17 +31,15 @@ const ITEMS = [
     title: 'Submit a Project',
     description: (
       <>
-        Pick a project topic, follow submission page guidelines, include Novu branding and project
-        info in{' '}
+        Pick a project topic, follow submission page guidelines, and fork our ConnectNovu
         <Link
-          to="https://github.com/novuhq/novu/blob/main/CONTRIBUTING.md"
+          to="https://github.com/novuhq/connect-readme"
           theme="primary-underline"
           target="_blank"
           rel="noreferrer"
         >
-          README.md
+          README repository
         </Link>{' '}
-        file.
       </>
     ),
   },
@@ -66,7 +64,7 @@ const HowItWorks = () => (
             <img className="h-16 sm:mx-auto" src={icon} height={64} width={120} alt="" />
             <div className="mt-5">
               <h3 className="text-24 font-medium leading-snug">{title}</h3>
-              <p className="font-book mt-3 max-w-[377px] text-16 text-gray-9 lg:mt-2 lg:max-w-none">
+              <p className="mt-3 max-w-[377px] text-16 font-book text-gray-9 lg:mt-2 lg:max-w-none">
                 {description}
               </p>
             </div>
