@@ -44,11 +44,11 @@ const Hero = () => {
       setStates((prev) => ({ ...prev, IS_LAUNCHED: true }));
     }
 
-    if (user?.topic && !!user?.topicLanguages.length && !states.IS_SELECTED_TOPIC && !isLaunched) {
+    if (user?.topic && !!user?.topicLanguages.length && !states.IS_SELECTED_TOPIC && isLaunched) {
       setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
     }
 
-    if (user?.projectUrl && !states.IS_SUBMITTED_PROJECT && !isLaunched) {
+    if (user?.projectUrl && !states.IS_SUBMITTED_PROJECT && isLaunched) {
       setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
     }
 
