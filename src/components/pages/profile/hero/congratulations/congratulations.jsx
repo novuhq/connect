@@ -10,7 +10,14 @@ const Congratulations = () => (
       <p className="mx-auto mt-3.5 max-w-[510px] text-18 leading-tight text-gray-8 sm:text-16">
         Сongratulations! Hackathon officially starts and you can select the theme you preferd. After
         you start to make your project and submit result until{' '}
-        <span className="text-secondary-4">29 May 2023</span>.
+        <span className="text-secondary-4">29 May 2023</span>.<br />
+        <a
+          className="text-emerald-400"
+          href="https://github.com/novuhq/connect-readme"
+          target="_blank" rel="noreferrer"
+        >
+          Please clone this project and update README.md to match your project.
+        </a>
       </p>
 
       <img

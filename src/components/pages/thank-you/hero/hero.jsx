@@ -17,11 +17,15 @@ const DESCRIPTION = (
   <>
     Thank you for registering for the Hackathon! 🚀
     <br />
-    We are starting on 1st May, but you can already start working on it 😉
+    <a className="text-emerald-400" href="https://github.com/novuhq/connect-readme" target="_blank" rel="noreferrer">
+      Before you start, please clone this project and update README.md to match your project.
+    </a>
     <br />
-    We will let you know more over the email connected to your GitHub.
+    Need help using Novu?
     <br />
-    Feel free to follow us on Twitter and Join our discord (at the bottom of the page).
+    <a href="https://zoom.us/webinar/register/WN_BdYumOf3Rrumj_nhHGKHRA">
+      Register to our webinar on May 4th, we will build a sample app together!
+    </a>
   </>
 );
 
