@@ -10,7 +10,9 @@ const DESCRIPTION =
   'ConnectNovu Hackathon is a global event focused on notifications. Get ready to join our upcoming hackathon and&nbsp;build with the latest notifications infrastructure!';
 
 const CountdownTimer = () => {
-  const { items, isLoading, isLaunched } = useCountdown('May 29, 2023 00:00:00');
+  const { items, isLoading, isLaunched } = useCountdown(
+    new Date('May 29, 2023 00:00:00').getTime()
+  );
 
   return (
     <section className="countdown-timer safe-paddings pb-16 pt-[70px] sm:py-12">
