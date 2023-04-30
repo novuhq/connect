@@ -18,8 +18,9 @@ const Congratulations = () => (
           Please clone this project and update README.md to match your project.
         </a>
         <br />
-        Please make your project and submit result until{' '}
-        <span className="text-secondary-4">29 May 2023</span>.<br />
+        Please make your project and submit result until
+        <br />
+        <span className="text-secondary-4">29 May 2023</span>.
       </p>
 
       <img
