@@ -31,7 +31,7 @@ const ITEMS = [
     title: 'Submit a Project',
     description: (
       <>
-        Pick a project topic, follow submission page guidelines, and fork our ConnectNovu
+        Pick a project topic, follow submission page guidelines, and fork our ConnectNovu{' '}
         <Link
           to="https://github.com/novuhq/connect-readme"
           theme="primary-underline"
