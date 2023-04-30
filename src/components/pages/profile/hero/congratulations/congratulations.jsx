@@ -16,7 +16,7 @@ const Congratulations = () => (
           target="_blank"
           rel="noreferrer"
         >
-          Please clone this project and update README.md to match your project.
+          Clone this project and update it's README.md
         </a>
         <p className="mt-[10px]">Please submit your Project by</p>
         <span className="text-secondary-4">29 May 2023</span>.
