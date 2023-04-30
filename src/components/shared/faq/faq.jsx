@@ -11,18 +11,33 @@ const FAQ_DATA = [
         <ul>
           <li>
             Using Novu and sending notifications from at least one channel,{' '}
-            <a target="_blank" href="https://docs.novu.co" rel="noreferrer">
+            <a
+              target="_blank"
+              className="leading-tight text-primary-1 transition-colors duration-200 hover:text-white"
+              href="https://docs.novu.co"
+              rel="noreferrer"
+            >
               please make sure you read our documentation
             </a>{' '}
             and{' '}
-            <a target="_blank" href="https://web.novu.co" rel="noreferrer">
+            <a
+              target="_blank"
+              className="leading-tight text-primary-1 transition-colors duration-200 hover:text-white"
+              href="https://web.novu.co"
+              rel="noreferrer"
+            >
               register to Novu
             </a>
           </li>
           <li>Have a frontend and a backend</li>
           <li>
             Have been forked from the{' '}
-            <a href="https://github.com/novuhq/connect-readme" target="_blank" rel="noreferrer">
+            <a
+              className="leading-tight text-primary-1 transition-colors duration-200 hover:text-white"
+              href="https://github.com/novuhq/connect-readme"
+              target="_blank"
+              rel="noreferrer"
+            >
               ConnectNovu README repository
             </a>
           </li>
