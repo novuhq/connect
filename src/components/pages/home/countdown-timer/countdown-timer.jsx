@@ -5,12 +5,12 @@ import React from 'react';
 
 import useCountdown from 'hooks/use-countdown';
 
-const TITLE = `May 1</br> Hackathon starts`;
+const TITLE = `May 29</br> Hackathon ends`;
 const DESCRIPTION =
   'ConnectNovu Hackathon is a global event focused on notifications. Get ready to join our upcoming hackathon and&nbsp;build with the latest notifications infrastructure!';
 
 const CountdownTimer = () => {
-  const { items, isLoading, isLaunched } = useCountdown();
+  const { items, isLoading, isLaunched } = useCountdown('May 29, 2023 00:00:00');
 
   return (
     <section className="countdown-timer safe-paddings pb-16 pt-[70px] sm:py-12">
