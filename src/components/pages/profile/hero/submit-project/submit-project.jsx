@@ -13,7 +13,10 @@ import useCountdown from 'hooks/use-countdown';
 import submittedProjectIllustration from 'images/profile/submitted-project.svg';
 
 const validationSchema = yup.object().shape({
-  repositoryUrl: yup.string().required('Please provide a link to the repository'),
+  repositoryUrl: yup
+    .string()
+    .required('Please provide a link to the repository')
+    .matches(/^https:\/\/github\.com\//, 'Please provide a valid GitHub repository URL'),
   description: yup.string().required('Please provide a description'),
 });
 const SubmitProject = ({ user, states, setStates, setUser }) => {
