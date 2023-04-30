@@ -18,7 +18,7 @@ const Congratulations = () => (
         >
           Clone this project and update it's README.md
         </a>
-        <p className="mt-[10px]">
+        <p className="mt-[30px]">
           Please submit your Project by <span className="text-secondary-4">29 May 2023</span>
         </p>
       </p>

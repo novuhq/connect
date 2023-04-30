@@ -10,9 +10,7 @@ const DESCRIPTION =
   'ConnectNovu Hackathon is a global event focused on notifications. Get ready to join our upcoming hackathon and&nbsp;build with the latest notifications infrastructure!';
 
 const CountdownTimer = () => {
-  const { items, isLoading, isLaunched } = useCountdown(
-    new Date('May 29, 2023 00:00:00').getTime()
-  );
+  const { items, isLoading } = useCountdown(new Date('May 29, 2023 00:00:00').getTime());
 
   return (
     <section className="countdown-timer safe-paddings pb-16 pt-[70px] sm:py-12">
@@ -30,9 +28,7 @@ const CountdownTimer = () => {
           </div>
 
           <div className="flex-1">
-            <h3 className="text-16 font-medium uppercase leading-none text-white">
-              {isLaunched ? 'Time to end' : 'Time to launch'}
-            </h3>
+            <h3 className="text-16 font-medium uppercase leading-none text-white">Time to end</h3>
 
             <LazyMotion features={domAnimation}>
               <m.div
