@@ -5,7 +5,7 @@ import React from 'react';
 const CountdownTimer = ({ items, isLoading = false }) => (
   <div className="relative overflow-hidden rounded-lg pb-28 pt-20 before:absolute before:inset-0 before:bg-[linear-gradient(225deg,#00AAFF_0%,#E0CAFF_80.36%)] before:opacity-10 sm:py-16">
     <div className="flex flex-col items-center">
-      <h3 className="text-16 font-medium uppercase leading-none text-white">Time to launch</h3>
+      <h3 className="text-16 font-medium uppercase leading-none text-white">Time to end</h3>
       <LazyMotion features={domAnimation}>
         <m.div
           className="mt-7 flex gap-x-18 md:gap-x-16 sm:gap-x-10 xs:gap-x-6"
