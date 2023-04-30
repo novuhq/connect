@@ -25,7 +25,7 @@ const DESCRIPTION = (
     >
       Before you start, please clone this project and update README.md to match your project.
     </a>
-    <p>Need help using Novu?</p>
+    <p className="mt-[10px]">Need help using Novu?</p>
     <p>
       <a
         target="_blank"
