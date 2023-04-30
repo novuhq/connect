@@ -30,7 +30,8 @@ const DESCRIPTION = (
       <a
         target="_blank"
         href="https://zoom.us/webinar/register/WN_BdYumOf3Rrumj_nhHGKHRA"
-        className="leading-tight text-primary-1 transition-colors duration-200 hover:text-white" rel="noreferrer"
+        className="leading-tight text-primary-1 transition-colors duration-200 hover:text-white"
+        rel="noreferrer"
       >
         Register to our webinar on May 4th, we will build a sample app together!
       </a>
@@ -46,7 +47,7 @@ const Hero = () => (
       </h1>
       <p className="mt-5 text-center text-24 md:text-20 sm:text-16">{DESCRIPTION}</p>
       <Button className="mt-10 xs:text-12" to="/profile" size="md" theme="primary">
-        <span className="z-10">Open profile</span>
+        <span className="z-10">Click to start building ⭐️</span>
       </Button>
 
       <div className="absolute bottom-20 md:bottom-12">
