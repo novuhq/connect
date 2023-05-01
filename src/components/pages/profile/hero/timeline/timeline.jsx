@@ -57,6 +57,22 @@ const Timeline = ({ className = '', states }) => {
           };
         }
 
+        if (index === 2 && states.IS_SUBMITTED_PROJECT && !states.IS_PROJECT_RATED) {
+          return {
+            ...stage,
+            isActive: true,
+            isCompleted: false,
+          };
+        }
+
+        if (index === 2 && states.IS_PROJECT_RATED) {
+          return {
+            ...stage,
+            isActive: true,
+            isCompleted: true,
+          };
+        }
+
         return stage;
       })
     );
@@ -118,6 +134,7 @@ Timeline.propTypes = {
   states: PropTypes.shape({
     IS_SELECTED_TOPIC: PropTypes.bool,
     IS_SUBMITTED_PROJECT: PropTypes.bool,
+    IS_PROJECT_RATED: PropTypes.bool,
   }).isRequired,
 };
 
