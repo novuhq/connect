@@ -41,7 +41,7 @@ const Hero = () => {
           {status === AUTH_STATUS.AUTHENTICATED ? (
             <>
               <CheckIcon className="z-10 mr-4 h-6" />
-              <span className="z-10">You are registered</span>
+              <span className="z-10">Manage your project</span>
             </>
           ) : (
             <>
