@@ -11,8 +11,7 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_SERVER,
 });
 
-export const authOptions = () => ({
-  adapter: PrismaAdapter(prisma),
+export const basicOptions = {
   session: {
     maxAge: 30 * 24 * 60 * 60,
   },
@@ -22,6 +21,11 @@ export const authOptions = () => ({
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+};
+
+export const authOptions = () => ({
+  adapter: PrismaAdapter(prisma),
+  ...basicOptions,
   events: {
     async signIn({ user, account }) {
       const { login } = await fetch('https://api.github.com/user', {
