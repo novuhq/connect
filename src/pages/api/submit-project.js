@@ -1,16 +1,6 @@
-import { getServerSession } from 'next-auth/next';
-
-import { authOptions } from 'pages/api/auth/[...nextauth]';
-
 import prisma from '~/prisma/client';
 
 export default async function handler(req, res) {
-  const session = await getServerSession(req, res, authOptions);
-
-  if (!session) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
   const { method } = req;
 
   if (method !== 'POST') {
