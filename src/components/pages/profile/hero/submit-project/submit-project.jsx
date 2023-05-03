@@ -54,6 +54,9 @@ const SubmitProject = ({ user, states, setStates, setUser }) => {
         setUser(data);
         setButtonState(BUTTON_STATES.DEFAULT);
         setStates((prev) => ({ ...prev, IS_SUBMITTED_PROJECT: true }));
+      } else {
+        const error = data;
+        throw error;
       }
     } catch (error) {
       setButtonState(BUTTON_STATES.DEFAULT);

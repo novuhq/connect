@@ -64,16 +64,20 @@ const SelectTopic = ({ user, setStates, setUser }) => {
           'Content-Type': 'application/json',
         },
       });
+
       const data = await response.json();
 
       if (response.ok) {
         setUser(data);
         setButtonState(BUTTON_STATES.DEFAULT);
         setStates((prev) => ({ ...prev, IS_SELECTED_TOPIC: true }));
+      } else {
+        const error = data;
+        throw error;
       }
     } catch (error) {
       setButtonState(BUTTON_STATES.DEFAULT);
-      console.log(error);
+      console.error(error);
     }
   };
 

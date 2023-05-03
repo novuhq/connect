@@ -1,3 +1,5 @@
+import { getSession } from 'next-auth/react';
+
 import prisma from '~/prisma/client';
 
 export default async function handler(req, res) {
@@ -14,7 +16,17 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Missing user ID' });
   }
 
+  const session = await getSession({ req });
+
+  if (!session) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
   const { projectUrl, projectDescription } = req.body;
+
+  if (!projectUrl || !projectDescription) {
+    return res.status(400).json({ message: 'Missing project data' });
+  }
 
   try {
     const user = await prisma.user.update({
