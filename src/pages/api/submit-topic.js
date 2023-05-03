@@ -1,8 +1,16 @@
-import { getSession } from 'next-auth/react';
+import { getServerSession } from 'next-auth/next';
+
+import { authOptions } from 'pages/api/auth/[...nextauth]';
 
 import prisma from '~/prisma/client';
 
 export default async function handler(req, res) {
+  const session = await getServerSession(req, res, authOptions);
+
+  if (!session) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
   const { method } = req;
 
   if (method !== 'POST') {
@@ -14,18 +22,6 @@ export default async function handler(req, res) {
 
   if (!userId) {
     return res.status(400).json({ message: 'Missing user ID' });
-  }
-
-  const session = await getSession({ req });
-
-  if (!session) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
-  const { projectUrl, projectDescription } = req.body;
-
-  if (!projectUrl || !projectDescription) {
-    return res.status(400).json({ message: 'Missing project data' });
   }
 
   const { topic, languages } = req.body;

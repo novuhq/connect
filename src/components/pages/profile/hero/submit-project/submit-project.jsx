@@ -60,7 +60,7 @@ const SubmitProject = ({ user, states, setStates, setUser }) => {
       }
     } catch (error) {
       setButtonState(BUTTON_STATES.DEFAULT);
-      console.log(error);
+      console.error(error);
     }
   };
 
