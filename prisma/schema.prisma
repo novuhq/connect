@@ -158,6 +158,10 @@ model User {
   topicLanguages      String[] @default([])
   projectUrl          String?
   projectDescription  String?
+  innovationAndCreativityScore      Int?
+  usefulnessAndPracticalityScore    Int?
+  qualityAndCompletenessScore       Int?
+  uxAndDesignScore                  Int?
 }
 
 model Winners {
