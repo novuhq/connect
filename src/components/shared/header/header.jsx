@@ -68,7 +68,7 @@ const Header = ({ isMobileMenuOpen = false, onBurgerClick }) => {
         </div>
 
         <div className="hidden items-center space-x-6 md:flex">
-          <Novu />
+          {user?.email && !isLoading && <Novu userEmail={user.email} />}
           {user?.image && !isLoading && (
             <Link {...LINKS.profile}>
               <img
