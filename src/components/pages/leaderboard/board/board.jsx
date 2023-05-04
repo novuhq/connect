@@ -49,7 +49,7 @@ const getMedal = (index) => {
 const HEADER = ['Place', 'Name', 'Score'];
 
 const Board = ({ participants }) => (
-  <section className="hero safe-paddings pb-32 pt-10 sm:pb-20 sm:pt-6">
+  <section className="hero safe-paddings pb-32 pt-3.5 sm:pb-20">
     <div className="container-md">
       <div className="grid-gap-x grid grid-cols-8 border-b border-gray-4 pb-4 sm:grid-cols-[60px,1fr,1fr,65px]">
         {HEADER.map((header) => (
