@@ -100,7 +100,7 @@ const Board = ({ participants }) => (
                     className={clsx(
                       'grid-gap-x group grid grid-cols-8 border-b border-gray-4 py-4 sm:grid-cols-[60px,1fr,1fr,65px]',
                       {
-                        'bg-gray-1': index < 10,
+                        'bg-gray-1': medal,
                       }
                     )}
                     key={index}
@@ -139,7 +139,13 @@ const Board = ({ participants }) => (
                       <span className="truncate text-18 font-book leading-tight">{name}</span>
                     </div>
                     <div className="text-highlighting-blue-gradient">
-                      <span className="block text-28 font-medium leading-none">{score}</span>
+                      <span
+                        className={clsx('block text-28 font-medium leading-none', {
+                          '!bg-none text-white': !medal,
+                        })}
+                      >
+                        {score}
+                      </span>
                     </div>
                   </li>
                 );
@@ -150,7 +156,7 @@ const Board = ({ participants }) => (
         <div className="flex flex-col items-center border-b border-gray-4 pb-10 pt-8">
           <span className="block text-40 font-medium leading-tight">No results yet</span>
           <p className="mt-3.5 max-w-[510px] text-center text-18 leading-tight text-gray-8">
-            Hackathon officially starts and you can select the theme you prefer. After you start to
+            Hackathon officially starts and you can select the topic you prefer. After you start to
             make your project and submit result until{' '}
             <span className="text-secondary-4">29 May 2023</span>.
           </p>
