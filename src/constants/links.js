@@ -13,6 +13,9 @@ export default {
   home: {
     to: '/',
   },
+  leaderboard: {
+    to: '/leaderboard',
+  },
   profile: {
     to: '/profile',
   },

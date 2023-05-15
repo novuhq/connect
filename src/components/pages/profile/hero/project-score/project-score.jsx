@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 
 import Button from 'components/shared/button/button';
+import LINKS from 'constants/links';
 
 const ProjectScore = ({ user }) => {
   const [totalScore, setTotalScore] = useState(0);
@@ -52,7 +53,12 @@ const ProjectScore = ({ user }) => {
           Very good! Now you can check the Leader board and try to find your project!
         </p>
 
-        <Button className="mt-7 xs:w-full xs:text-12" to="/leadearboard" size="sm" theme="primary">
+        <Button
+          className="mt-7 xs:w-full xs:text-12"
+          size="sm"
+          theme="primary"
+          {...LINKS.leaderboard}
+        >
           <span className="z-10">Go to Leadearboard</span>
         </Button>
 
