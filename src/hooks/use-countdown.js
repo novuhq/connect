@@ -50,6 +50,7 @@ export default function useCountdown(countdownDate = new Date('May 1, 2023 00:00
         seconds: '00',
       });
       setIsLaunched(true);
+      setIsLoading(false);
       return;
     }
 
