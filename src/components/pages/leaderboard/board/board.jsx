@@ -81,6 +81,7 @@ const Board = ({ participants }) => (
                 {
                   name,
                   image,
+                  projectUrl,
                   innovationAndCreativityScore,
                   usefulnessAndPracticalityScore,
                   qualityAndCompletenessScore,
@@ -94,6 +95,10 @@ const Board = ({ participants }) => (
                   usefulnessAndPracticalityScore +
                   qualityAndCompletenessScore +
                   uxAndDesignScore;
+
+                if (!score) {
+                  return <></>;
+                }
 
                 return (
                   <li
@@ -136,7 +141,11 @@ const Board = ({ participants }) => (
                         height={36}
                         alt={name || ''}
                       />
-                      <span className="truncate text-18 font-book leading-tight">{name}</span>
+                      <span className="truncate text-18 font-book leading-tight">
+                        <a href={projectUrl} target="_blank" rel="noreferrer">
+                          {name}
+                        </a>
+                      </span>
                     </div>
                     <div className="text-highlighting-blue-gradient">
                       <span
