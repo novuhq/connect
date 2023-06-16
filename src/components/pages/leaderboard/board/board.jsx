@@ -4,8 +4,7 @@
 'use client';
 
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Button from 'components/shared/button';
 import LINKS from 'constants/links';
@@ -48,146 +47,150 @@ const getMedal = (index) => {
 
 const HEADER = ['Place', 'Name', 'Score'];
 
-const Board = ({ participants }) => (
-  <section className="hero safe-paddings pb-32 pt-3.5 sm:pb-20">
-    <div className="container-md">
-      <div className="grid-gap-x grid grid-cols-8 border-b border-gray-4 pb-4 sm:grid-cols-[60px,1fr,1fr,65px]">
-        {HEADER.map((header) => (
-          <span className="text-24 font-medium leading-tight sm:text-20 [&:nth-child(2)]:col-span-6 [&:nth-child(2)]:sm:col-span-2">
-            {header}
-          </span>
-        ))}
-      </div>
+const Board = () => {
+  const [participants, setParticipants] = useState(undefined);
 
-      {participants.length ? (
-        <ul>
-          {participants
-            .sort((a, b) => {
-              const totalScoreA =
-                a.innovationAndCreativityScore +
-                a.usefulnessAndPracticalityScore +
-                a.qualityAndCompletenessScore +
-                a.uxAndDesignScore;
-              const totalScoreB =
-                b.innovationAndCreativityScore +
-                b.usefulnessAndPracticalityScore +
-                b.qualityAndCompletenessScore +
-                b.uxAndDesignScore;
+  const load = useCallback(async () => {
+    const res = await fetch(`/api/leaderboard`);
+    setParticipants(await res.json());
+  }, []);
 
-              return totalScoreB - totalScoreA;
-            })
-            .map(
-              (
-                {
-                  name,
-                  image,
-                  projectUrl,
-                  innovationAndCreativityScore,
-                  usefulnessAndPracticalityScore,
-                  qualityAndCompletenessScore,
-                  uxAndDesignScore,
-                },
-                index
-              ) => {
-                const { medal, colorText } = getMedal(index);
-                const score =
-                  innovationAndCreativityScore +
-                  usefulnessAndPracticalityScore +
-                  qualityAndCompletenessScore +
-                  uxAndDesignScore;
+  useEffect(() => {
+    load();
+  }, [participants, load]);
 
-                return (
-                  <li
-                    className={clsx(
-                      'grid-gap-x group grid grid-cols-8 border-b border-gray-4 py-4 sm:grid-cols-[60px,1fr,1fr,65px]',
-                      {
-                        'bg-gray-1': medal,
-                      }
-                    )}
-                    key={index}
-                  >
-                    <div
-                      className={clsx('relative flex items-center px-4', {
-                        'pl-[30px]': !medal,
-                      })}
+  if (!participants) {
+    return <></>;
+  }
+
+  return (
+    <section className="hero safe-paddings pb-32 pt-3.5 sm:pb-20">
+      <div className="container-md">
+        <div className="grid-gap-x grid grid-cols-8 border-b border-gray-4 pb-4 sm:grid-cols-[60px,1fr,1fr,65px]">
+          {HEADER.map((header) => (
+            <span className="text-24 font-medium leading-tight sm:text-20 [&:nth-child(2)]:col-span-6 [&:nth-child(2)]:sm:col-span-2">
+              {header}
+            </span>
+          ))}
+        </div>
+
+        {participants.length ? (
+          <ul>
+            {participants
+              .sort((a, b) => {
+                const totalScoreA =
+                  a.innovationAndCreativityScore +
+                  a.usefulnessAndPracticalityScore +
+                  a.qualityAndCompletenessScore +
+                  a.uxAndDesignScore;
+                const totalScoreB =
+                  b.innovationAndCreativityScore +
+                  b.usefulnessAndPracticalityScore +
+                  b.qualityAndCompletenessScore +
+                  b.uxAndDesignScore;
+
+                return totalScoreB - totalScoreA;
+              })
+              .map(
+                (
+                  {
+                    name,
+                    image,
+                    projectUrl,
+                    innovationAndCreativityScore,
+                    usefulnessAndPracticalityScore,
+                    qualityAndCompletenessScore,
+                    uxAndDesignScore,
+                  },
+                  index
+                ) => {
+                  const { medal, colorText } = getMedal(index);
+                  const score =
+                    innovationAndCreativityScore +
+                    usefulnessAndPracticalityScore +
+                    qualityAndCompletenessScore +
+                    uxAndDesignScore;
+
+                  return (
+                    <li
+                      className={clsx(
+                        'grid-gap-x group grid grid-cols-8 border-b border-gray-4 py-4 sm:grid-cols-[60px,1fr,1fr,65px]',
+                        {
+                          'bg-gray-1': medal,
+                        }
+                      )}
+                      key={index}
                     >
-                      <div className="relative inline-block">
-                        {medal && (
-                          <img
-                            className="flex-shrink-0"
-                            src={medal}
-                            width={28}
-                            height={28}
-                            alt=""
-                          />
-                        )}
-                        <span
-                          className="absolute left-1/2 top-1/2 -mt-px block -translate-x-1/2 -translate-y-1/2 text-[15px] font-extrabold leading-none"
-                          style={{ color: colorText }}
-                        >
-                          {index + 1}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="col-span-6 flex items-center gap-x-5 sm:col-span-2 sm:gap-x-2.5">
-                      <img
-                        className="rounded-full grayscale transition-all duration-200 group-hover:grayscale-0"
-                        src={image}
-                        width={36}
-                        height={36}
-                        alt={name || ''}
-                      />
-                      <span className="truncate text-18 font-book leading-tight">
-                        <a href={projectUrl} target="_blank" rel="noreferrer">
-                          {name}
-                        </a>
-                      </span>
-                    </div>
-                    <div className="text-highlighting-blue-gradient">
-                      <span
-                        className={clsx('block text-28 font-medium leading-none', {
-                          '!bg-none text-white': !medal,
+                      <div
+                        className={clsx('relative flex items-center px-4', {
+                          'pl-[30px]': !medal,
                         })}
                       >
-                        {score}
-                      </span>
-                    </div>
-                  </li>
-                );
-              }
-            )}
-        </ul>
-      ) : (
-        <div className="flex flex-col items-center border-b border-gray-4 pb-10 pt-8">
-          <span className="block text-40 font-medium leading-tight">No results yet</span>
-          <p className="mt-3.5 max-w-[510px] text-center text-18 leading-tight text-gray-8">
-            Hackathon officially starts and you can select the topic you prefer. After you start to
-            make your project and submit result until{' '}
-            <span className="text-secondary-4">29 May 2023</span>.
-          </p>
+                        <div className="relative inline-block">
+                          {medal && (
+                            <img
+                              className="flex-shrink-0"
+                              src={medal}
+                              width={28}
+                              height={28}
+                              alt=""
+                            />
+                          )}
+                          <span
+                            className="absolute left-1/2 top-1/2 -mt-px block -translate-x-1/2 -translate-y-1/2 text-[15px] font-extrabold leading-none"
+                            style={{ color: colorText }}
+                          >
+                            {index + 1}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-6 flex items-center gap-x-5 sm:col-span-2 sm:gap-x-2.5">
+                        <img
+                          className="rounded-full grayscale transition-all duration-200 group-hover:grayscale-0"
+                          src={image}
+                          width={36}
+                          height={36}
+                          alt={name || ''}
+                        />
+                        <span className="truncate text-18 font-book leading-tight">
+                          <a href={projectUrl} target="_blank" rel="noreferrer">
+                            {name}
+                          </a>
+                        </span>
+                      </div>
+                      <div className="text-highlighting-blue-gradient">
+                        <span
+                          className={clsx('block text-28 font-medium leading-none', {
+                            '!bg-none text-white': !medal,
+                          })}
+                        >
+                          {score}
+                        </span>
+                      </div>
+                    </li>
+                  );
+                }
+              )}
+          </ul>
+        ) : (
+          <div className="flex flex-col items-center border-b border-gray-4 pb-10 pt-8">
+            <span className="block text-40 font-medium leading-tight">No results yet</span>
+            <p className="mt-3.5 max-w-[510px] text-center text-18 leading-tight text-gray-8">
+              Hackathon officially starts and you can select the topic you prefer. After you start
+              to make your project and submit result until{' '}
+              <span className="text-secondary-4">29 May 2023</span>.
+            </p>
+          </div>
+        )}
+
+        <div className="mt-12 flex justify-center">
+          <Button size="sm" theme="gray-outline" {...LINKS.home}>
+            Back to homepage
+          </Button>
         </div>
-      )}
-
-      <div className="mt-12 flex justify-center">
-        <Button size="sm" theme="gray-outline" {...LINKS.home}>
-          Back to homepage
-        </Button>
       </div>
-    </div>
-  </section>
-);
-
-Board.propTypes = {
-  participants: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      innovationAndCreativityScore: PropTypes.number.isRequired,
-      usefulnessAndPracticalityScore: PropTypes.number.isRequired,
-      qualityAndCompletenessScore: PropTypes.number.isRequired,
-      uxAndDesignScore: PropTypes.number.isRequired,
-    })
-  ).isRequired,
+    </section>
+  );
 };
 
 export default Board;
