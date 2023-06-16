@@ -52,12 +52,12 @@ const Board = () => {
 
   const load = useCallback(async () => {
     const res = await fetch(`/api/leaderboard`);
-    setParticipants(await res.json());
+    setParticipants((await res.json()).participants);
   }, []);
 
   useEffect(() => {
     load();
-  }, [participants, load]);
+  }, [load]);
 
   if (!participants) {
     return <></>;
