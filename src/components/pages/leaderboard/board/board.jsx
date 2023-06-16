@@ -96,10 +96,6 @@ const Board = ({ participants }) => (
                   qualityAndCompletenessScore +
                   uxAndDesignScore;
 
-                if (!score) {
-                  return <></>;
-                }
-
                 return (
                   <li
                     className={clsx(
