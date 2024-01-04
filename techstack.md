@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 novuhq/connect is built on the following main stack:
+
 - [React](https://reactjs.org/) – Javascript UI Libraries
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - [Autoprefixer](https://github.com/postcss/autoprefixer) – CSS Pre-processors / Extensions
@@ -13,11 +14,13 @@ novuhq/connect is built on the following main stack:
 - [Prisma](https://www.prisma.io/) – Object Relational Mapper (ORM)
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 novuhq/connect is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/1020/OYIaJ1KK.png' alt='React'/> [React](https://reactjs.org/) – Javascript UI Libraries
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png' alt='Autoprefixer'/> [Autoprefixer](https://github.com/postcss/autoprefixer) – CSS Pre-processors / Extensions
@@ -29,14 +32,15 @@ novuhq/connect is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/8680/Logo_Symbol_White.jpg' alt='Prisma'/> [Prisma](https://www.prisma.io/) – Object Relational Mapper (ORM)
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [novuhq/connect](https://github.com/novuhq/connect)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|35<br/>Tools used|11/09/23 <br/>Report generated|
+|38<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -186,9 +190,9 @@ Full tech stack [here](/techstack.md)
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (20)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (23)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (20)
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (23)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
@@ -203,6 +207,8 @@ Full tech stack [here](/techstack.md)
 |[eslint-plugin-react](https://www.npmjs.com/eslint-plugin-react)|v7.32.2|05/03/23|Nevo David |MIT|N/A|
 |[eslint-plugin-react-hooks](https://www.npmjs.com/eslint-plugin-react-hooks)|v4.6.0|05/03/23|Nevo David |MIT|N/A|
 |[file-loader](https://www.npmjs.com/file-loader)|v6.2.0|04/13/23|Andrew Golovanov |MIT|N/A|
+|[husky](https://www.npmjs.com/husky)|v8.0.3|04/13/23|Andrew Golovanov |MIT|N/A|
+|[lint-staged](https://www.npmjs.com/lint-staged)|v13.2.1|05/03/23|Nevo David |MIT|N/A|
 |[markdownlint-cli](https://www.npmjs.com/markdownlint-cli)|v0.33.0|04/18/23|Andrew Golovanov |MIT|N/A|
 |[postcss](https://www.npmjs.com/postcss)|v8.4.14|04/19/23|Nevo David |MIT|[CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) (Moderate)|
 |[postcss-import](https://www.npmjs.com/postcss-import)|v15.1.0|04/27/23|Andrew Golovanov |MIT|N/A|
@@ -212,8 +218,9 @@ Full tech stack [here](/techstack.md)
 |[tailwindcss](https://www.npmjs.com/tailwindcss)|v3.3.1|04/27/23|Andrew Golovanov |MIT|N/A|
 |[url-loader](https://www.npmjs.com/url-loader)|v4.1.1|04/13/23|Andrew Golovanov |MIT|N/A|
 |[utf-8-validate](https://www.npmjs.com/utf-8-validate)|v5.0.10|06/16/23|Nevo David |MIT|N/A|
+|[yup](https://www.npmjs.com/yup)|v1.1.1|04/13/23|Andrew Golovanov |MIT|N/A|
 
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
