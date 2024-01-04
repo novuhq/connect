@@ -1,11 +1,12 @@
 repo_name: novuhq/connect
 report_id: c71a0d6c8899fe9cf30ee46f6a3d671b
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T15:13:43+00:00'
+timestamp: '2024-01-04T14:58:18+00:00'
 requested_by: nevo-david
 provider: github
 branch: main
-detected_tools_count: 35
+detected_tools_count: 38
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/novuhq/connect
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/novuhq/connect
   detection_source: Repo Metadata
 - name: SQL
   description: It is a domain-specific language used in programming
@@ -34,7 +37,8 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
-  detection_source: prisma/migrations/20230501112453_project_rating/migration.sql
+  detection_source_url: https://github.com/novuhq/connect/blob/main/prisma/migrations/20230420091550_dev/migration.sql
+  detection_source: prisma/migrations/20230420091550_dev/migration.sql
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-20 09:24:15.000000000 Z
 - name: Autoprefixer
@@ -45,6 +49,7 @@ tools:
   category: Languages & Frameworks
   sub_category: CSS Pre-processors / Extensions
   image_url: https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -57,7 +62,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/5936/nextjs.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -71,7 +76,7 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-05-03 13:22:27.000000000 Z
@@ -85,7 +90,7 @@ tools:
   category: Data Stores
   sub_category: Object Relational Mapper (ORM)
   image_url: https://img.stackshare.io/service/8680/Logo_Symbol_White.jpg
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-04-19 12:01:27.000000000 Z
@@ -98,6 +103,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -109,6 +115,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/novuhq/connect
   detection_source: Repo Metadata
 - name: Prettier
   description: 'Prettier is an opinionated code formatter. '
@@ -120,7 +127,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/7035/default_66f265943abed56bcdbfca1c866a4261b1fbb063.jpg
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -132,6 +139,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -144,12 +152,14 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/novuhq/connect
   detection_source: Repo Metadata
 - name: husky
   website_url: https://github.com/typicode/husky
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/9527/5502029.jpeg
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -158,6 +168,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/10577/11071.jpeg
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-05-03 13:22:27.000000000 Z
@@ -166,6 +177,7 @@ tools:
   open_source: false
   hosted_saas: false
   image_url: https://img.stackshare.io/service/10756/339286.png
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -179,7 +191,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16059/default_5fd43aeff4d6a935abc13737de01a0355210499d.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-17 18:41:39.000000000 Z
@@ -193,7 +205,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16092/default_8725384794b44fe56f31da1d21ae759cf07be7a5.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-20 12:29:03.000000000 Z
@@ -207,7 +219,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16411/default_aa91da3cee4d961f0eea8ca5de77f399ec7ec794.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -221,7 +233,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17739/default_2f87d5add351cc79d3471e48bc0dd6f92c1288ad.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-06-16 11:03:22.000000000 Z
@@ -235,7 +247,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15857/default_7c39a83d4acd952df89b1ebfdb94c8646324fbf1.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -249,7 +261,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15879/default_0b10af8ca19c215f781dc07442e75bdc831089d0.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -263,7 +275,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15806/default_98aa227f51aa9d787815ec3fd98d0ab2bfebbb91.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -277,7 +289,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15845/default_6743ba96cf149a3c3c68a185199f9705d6eff80e.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -291,7 +303,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15817/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-05-03 13:22:27.000000000 Z
@@ -305,7 +317,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16149/default_1f3a2fc7d882e29a43394ecdf491b8989ea3f0fa.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-05-03 13:22:27.000000000 Z
@@ -319,10 +331,38 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15834/default_4479dbac220be99e50e724b2df6cf415241d71fd.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
+- name: husky
+  description: Prevents bad commit or push
+  package_url: https://www.npmjs.com/husky
+  version: 8.0.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15831/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-04-13 15:29:51.000000000 Z
+- name: lint-staged
+  description: Lint files staged by git
+  package_url: https://www.npmjs.com/lint-staged
+  version: 13.2.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15868/default_e0a4fb1126d7400f419f0931cf1669947a5bc552.png
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Nevo David
+  last_updated_on: 2023-05-03 13:22:27.000000000 Z
 - name: markdownlint-cli
   description: MarkdownLint Command Line Interface
   package_url: https://www.npmjs.com/markdownlint-cli
@@ -333,7 +373,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17273/default_b2015e9577d171c4c3f12c3c8d253c01fe63ba8d.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-18 12:14:22.000000000 Z
@@ -347,7 +387,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16012/default_7a88bebb451873cc63bd99007de5bd3bb8ef85de.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-04-19 12:01:27.000000000 Z
@@ -368,7 +408,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16086/default_d4e765f8a43dcfd232c8b9ee9732058bc27c727a.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-27 20:47:46.000000000 Z
@@ -382,7 +422,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15843/default_b71c906aeda030a5e2f1fe40bf12a93be52404ab.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -396,7 +436,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-05-03 13:22:27.000000000 Z
@@ -410,7 +450,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17696/default_9693d58c90f5c726ee648423687212d2a94266da.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-05-03 13:22:27.000000000 Z
@@ -424,7 +464,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-27 20:47:46.000000000 Z
@@ -438,7 +478,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15858/default_a2f722724df977d0f7752839e5d8845ab41f69d5.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Andrew Golovanov
   last_updated_on: 2023-04-13 15:29:51.000000000 Z
@@ -452,7 +492,21 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17898/default_3bc64391130859f94a137a7dc6cb87cd54da546b.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Nevo David
   last_updated_on: 2023-06-16 11:03:22.000000000 Z
+- name: yup
+  description: Dead simple Object schema validation
+  package_url: https://www.npmjs.com/yup
+  version: 1.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17215/default_37d9ccc57ae4d32e7ff46614e4f8bb2c4ddc7964.png
+  detection_source_url: https://github.com/novuhq/connect/blob/main/package-lock.json
+  detection_source: package.json
+  last_updated_by: Andrew Golovanov
+  last_updated_on: 2023-04-13 15:29:51.000000000 Z
